@@ -1,0 +1,44 @@
+.dataSpouse {
+    /* visibility: hidden; */
+    display: none;
+}
+
+.dataSpouse.active {
+    display: block;
+}
+
+.dataDependents {
+    /* visibility: hidden; */
+    display: none;
+}
+
+.dataDependents.active {
+    display: block;
+}
+
+.dataFed {
+    /* visibility: hidden; */
+    display: none;
+}
+
+.dataFed.active {
+    display: block;
+}
+
+.dataMedicalExpenses {
+    /* visibility: hidden; */
+    display: none;
+}
+
+.dataMedicalExpenses.active {
+    display: block;
+}
+
+.dataEducationExpenses {
+    /* visibility: hidden; */
+    display: none;
+}
+
+.dataEducationExpenses.active {
+    display: block;
+}
