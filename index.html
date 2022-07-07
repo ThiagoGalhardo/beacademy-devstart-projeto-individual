@@ -5,236 +5,302 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="icons" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> -->
     <title>Document</title>
 </head>
 
 <body>
 
-    <div class="Container p-5">
+    <div class="container p-5">
 
-        <form class="row g-3">
-            <div class="col-12">
-                <label for="name" class="form-label">Nome</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Ex: José Silva">
-            </div>
-            <div class="col-12">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="example@example.com">
-            </div>
-            <div class="col-12">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="number" class="form-control" name="cpf" id="cpf" placeholder="123.456.789-10">
-            </div>
-            <div class="col-9">
-                <label for="inputAddress" class="form-label">Endereço</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Rua das flores">
-            </div>
-            <div class="col-3">
-                <label for="number-house" class="form-label">Número</label>
-                <input type="text" class="form-control" id="number-hous" placeholder="Ex: 50">
-            </div>
-            <div class="col-md-6">
-                <label for="inputCity" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="inputCity" placeholder="Ex: São Paulo">
-            </div>
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">Estado</label>
-                <select id="state" name="state" class="form-select">
-          <option selected>Selecione...</option>
-          <option value="AC">Acre</option>
-          <option value="AL">Alagoas</option>
-          <option value="AP">Amapá</option>
-          <option value="AM">Amazonas</option>
-          <option value="BA">Bahia</option>
-          <option value="CE">Ceará</option>
-          <option value="DF">Distrito Federal</option>
-          <option value="ES">Espírito Santo</option>
-          <option value="GO">Goiás</option>
-          <option value="MA">Maranhão</option>
-          <option value="MT">Mato Grosso</option>
-          <option value="MS">Mato Grosso do Sul</option>
-          <option value="MG">Minas Gerais</option>
-          <option value="PA">Pará</option>
-          <option value="PB">Paraíba</option>
-          <option value="PR">Paraná</option>
-          <option value="PE">Pernambuco</option>
-          <option value="PI">Piauí</option>
-          <option value="RJ">Rio de Janeiro</option>
-          <option value="RN">Rio Grande do Norte</option>
-          <option value="RS">Rio Grande do Sul</option>
-          <option value="RO">Rondônia</option>
-          <option value="RR">Roraima</option>
-          <option value="SC">Santa Catarina</option>
-          <option value="SP">São Paulo</option>
-          <option value="SE">Sergipe</option>
-          <option value="TO">Tocantins</option>
-          <option value="EX">Estrangeiro</option>
-        </select>
-            </div>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Cep</label>
-                <input type="text" class="form-control" id="inputZip" placeholder="Ex: 000.00-000">
-            </div>
 
-            <div class="col-md-4">
-                <label for="change-address" class="form-label">Teve mudança de endereço em 2022?</label>
-                <select id="change-address" class="form-select">
-          <option selected>Selecione...</option>
-          <option value="sim">Sim</option>
-          <option value="não">Não</option>
-        </select>
-            </div>
+        <div class="card p-3">
 
-            <div class="col-12">
-                <label for="occupation" class="form-label">Profissão</label>
-                <input type="text" class="form-control" name="occupation" id="occupation" placeholder="Ex: Analista de sistemas">
-            </div>
+            <h3 class="text-center">Dados pessoais</h3>
+            <hr>
 
-            <div class="col-12">
-                <label for="number-register" class="form-label">Nº do registro de classe (OAB, CRM...): </label>
-                <input type="text" class="form-control" name="number-register" id="number-register">
-            </div>
-
-            <div class="col-md-4">
-                <label for="haveSpouse" class="form-label">Possui cônjuge ou companheiro(a)? </label>
-                <select id="haveSpouse" class="form-select">
-                    <option selected>Selecione...</option>
-                    <option value="sim">Sim</option>
-                    <option value="não">Não</option>
-                </select>
-            </div>
-
-            <div class="dataSpouse">
-
+            <form class="row g-3">
                 <div class="col-12">
-                    <label for="cpf-spouse" class="form-label">CPF do cônjuge ou companheiro(a)</label>
-                    <input type="number" class="form-control" name="cpf-spouse" id="cpf-spouse" placeholder="123.456.789-10">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Ex: José Silva">
                 </div>
-
-                <div class="col-12 mt-3">
-                    <label for="birth-spouse" class="form-label">Data de nascimento do cônjuge ou companheiro(a)</label>
-                    <input type="text" class="form-control" name="birth-spouse" id="birth-spouse" placeholder="Ex: 10/01/1990">
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-                <label for="haveDependents" class="form-label">Possui dependentes? </label>
-                <select id="haveDependents" class="form-select">
-                  <option selected>Selecione...</option>
-                  <option value="sim">Sim</option>
-                  <option value="não">Não</option>
-              </select>
-            </div>
-
-            <div class="dataDependents">
-
                 <div class="col-12">
-                    <label for="name-dependents" class="form-label">Nome do dependente</label>
-                    <input type="text" class="form-control" name="name-dependents" id="name-dependents" placeholder="Ex: João da Silva">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="example@example.com">
                 </div>
-
-                <div class="col-12 mt-3">
-                    <label for="cpf-dependents" class="form-label">CPF do dependente</label>
-                    <input type="number" class="form-control" name="cpf-dependents" id="cpf-dependents" placeholder="123.456.789-10">
-                </div>
-
-                <div class="col-12 mt-3">
-                    <label for="birth-dependents" class="form-label">Data de nascimento do dependente</label>
-                    <input type="text" class="form-control" name="birth-dependents" id="birth-dependents" placeholder="Ex: 10/01/1990">
-                </div>
-
-                <div class="col-12 mt-3">
-                    <label for="kinship-dependents" class="form-label">Grau de parentesco</label>
-                    <input type="text" class="form-control" name="kinship-dependents" id="kinship-dependents" placeholder="Ex: Filho">
-                </div>
-
-            </div>
-
-
-            <div class="col-md-4">
-                <label for="haveFed" class="form-label">Possui alimentandos? </label>
-                <select id="haveFed" class="form-select">
-                    <option selected>Selecione...</option>
-                    <option value="sim">Sim</option>
-                    <option value="não">Não</option>
-              </select>
-            </div>
-
-            <div class="dataFed">
-
                 <div class="col-12">
-                    <label for="cpf-fed" class="form-label">CPF do alimentando</label>
-                    <input type="number" class="form-control" name="cpf-fed" placeholder="123.456.789-10">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="number" class="form-control" name="cpf" id="cpf" placeholder="123.456.789-10">
                 </div>
-
-                <div class="col-12 mt-3">
-                    <label for="birth-fed" class="form-label">Data de nascimento do alimentando</label>
-                    <input type="date" class="form-control" name="birth-fed" placeholder="Ex: 10/01/1990">
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-                <label for="haveMedicalExpenses" class="form-label">Possui despesas médicas? </label>
-                <select id="haveMedicalExpenses" class="form-select">
-                  <option selected>Selecione...</option>
-                  <option value="sim">Sim</option>
-                  <option value="não">Não</option>
-            </select>
-            </div>
-
-            <div class="dataMedicalExpenses">
-
                 <div class="col-12">
-                    <label for="name-medical-expenses" class="form-label">Nome do convenio</label>
-                    <input type="text" class="form-control" name="name-medical-expenses" placeholder="Ex: Amil">
+                    <label for="cpf" class="form-label">Título de Eleitor</label>
+                    <input type="number" class="form-control" name="cpf" id="cpf" placeholder="0043 5687 09 06">
                 </div>
 
-                <div class="col-12 mt-3">
-                    <label for="cnpj-medical-expenses" class="form-label">CNPJ do convenio</label>
-                    <input type="number" class="form-control" name="cnpj-medical-expenses" placeholder="99.888.777/0001-66">
+                <div class="row g-3 mt-0">
+                    <div class="col-sm-12 col-md-3 col-lg-3">
+                        <label for="inputZip" class="form-label">Cep</label>
+                        <input type="text" class="form-control" id="inputZip" placeholder="Ex: 000.00-000">
+                    </div>
                 </div>
 
-                <div class="col-12 mt-3">
-                    <label for="total-paid-medical-expenses" class="form-label">Total gasto</label>
-                    <input type="text" class="form-control" name="total-paid-medical-expenses" placeholder="Ex: 12.305,43">
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <label for="inputAddress" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Rua das flores">
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <label for="number-house" class="form-label">Número</label>
+                    <input type="text" class="form-control" id="number-hous" placeholder="Ex: 50">
+                </div>
+                <div class="col-md-5">
+                    <label for="inputCity" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="inputCity" placeholder="Ex: São Paulo">
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <label for="inputState" class="form-label">Estado</label>
+                    <select id="state" name="state" class="form-select">
+                        <option selected>Selecione...</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                        <option value="EX">Estrangeiro</option>
+                    </select>
                 </div>
 
-            </div>
-
-            <div class="col-md-4">
-                <label for="haveEducationExpenses" class="form-label">Possui despesas com educação/ instituição? </label>
-                <select id="haveEducationExpenses" class="form-select">
-                  <option selected>Selecione...</option>
-                  <option value="sim">Sim</option>
-                  <option value="não">Não</option>
-          </select>
-            </div>
-
-
-            <div class="dataEducationExpenses">
-
-                <div class="col-12">
-                    <label for="name-education-expenses" class="form-label">Nome da instituição</label>
-                    <input type="text" class="form-control" name="name-education-expenses" placeholder="Ex: Uninove">
+                <div class="col-md-5">
+                    <label for="change-address" class="form-label">Teve mudança de endereço em 2022?</label>
+                    <select id="change-address" class="form-select">
+                        <option selected>Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="não">Não</option>
+                    </select>
                 </div>
 
-                <div class="col-12 mt-3">
-                    <label for="cnpj-education-expenses" class="form-label">CNPJ da instituição</label>
-                    <input type="number" class="form-control" name="cnpj-education-expenses" placeholder="99.888.777/0001-66">
+                <!-- ============ end card ============ -->
+        </div>
+
+        <div class="card p-3 mt-3">
+
+            <h3 class="text-center">Dados complementares</h3>
+            <hr>
+
+            <div class="row g-3">
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <label for="occupation" class="form-label">Profissão</label>
+                    <input type="text" class="form-control" name="occupation" id="occupation"
+                        placeholder="Ex: Analista de sistemas">
                 </div>
 
-                <div class="col-12 mt-3">
-                    <label for="total-paid-education-expenses" class="form-label">Total gasto</label>
-                    <input type="text" class="form-control" name="total-paid-education-expenses" placeholder="Ex: 12.305,43">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <label for="number-register" class="form-label">Nº do registro de classe (OAB, CRM...) </label>
+                    <input type="text" class="form-control" name="number-register" id="number-register">
                 </div>
 
-            </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="haveSpouse" class="form-label">Cônjuge ou companheiro(a)? </label>
+                    <select id="haveSpouse" class="form-select">
+                        <option selected>Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="não">Não</option>
+                    </select>
+                </div>
 
-            <!-- <hr>
+                <div class="dataSpouse">
+
+                    <div class="col-12">
+                        <label for="cpf-spouse" class="form-label">CPF do cônjuge ou companheiro(a)</label>
+                        <input type="number" class="form-control" name="cpf-spouse" id="cpf-spouse"
+                            placeholder="123.456.789-10">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label for="birth-spouse" class="form-label">Data de nascimento do cônjuge ou
+                            companheiro(a)</label>
+                        <input type="text" class="form-control" name="birth-spouse" id="birth-spouse"
+                            placeholder="Ex: 10/01/1990">
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="haveDependents" class="form-label">Dependentes? </label>
+
+                    <select id="haveDependents" class="form-select">
+                        <option selected>Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="não">Não</option>
+                    </select>
+                </div>
+
+                <div class="dataDependents">
+
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Atenção</strong>, o dependente não pode constar na declaração de outro contribuinte!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="name-dependents" class="form-label">Nome do dependente</label>
+                        <input type="text" class="form-control" name="name-dependents" id="name-dependents"
+                            placeholder="Ex: João da Silva">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label for="cpf-dependents" class="form-label">CPF do dependente</label>
+                        <input type="number" class="form-control" name="cpf-dependents" id="cpf-dependents"
+                            placeholder="123.456.789-10">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label for="birth-dependents" class="form-label">Data de nascimento do dependente</label>
+                        <input type="text" class="form-control" name="birth-dependents" id="birth-dependents"
+                            placeholder="Ex: 10/01/1990">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label for="kinship-dependents" class="form-label">Grau de parentesco</label>
+                        <input type="text" class="form-control" name="kinship-dependents" id="kinship-dependents"
+                            placeholder="Ex: Filho">
+                    </div>
+
+                    <div class="col-md-4 mt-3">
+                        <label for="live-with-dpendents" class="form-label">O dependente mora com você? </label>
+
+                        <select id="live-with-dpendents" class="form-select">
+                            <option selected>Selecione...</option>
+                            <option value="sim">Sim</option>
+                            <option value="não">Não</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="haveFed" class="form-label">Alimentandos?</label>
+                    <i class="bi bi-question-circle text-primary" data-bs-placement="right" data-bs-toggle="tooltip"
+                        data-bs-custom-class="custom-tooltip" title="Quem paga pensão por ordem judicial"> </i>
+                    <select id="haveFed" class="form-select">
+                        <option selected>Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="não">Não</option>
+                    </select>
+                </div>
+
+                <div class="dataFed">
+
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Atenção</strong>, o alimentando não pode ser seu dependente!
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="cpf-fed" class="form-label">CPF do alimentando</label>
+                        <input type="number" class="form-control" name="cpf-fed" placeholder="123.456.789-10">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label for="birth-fed" class="form-label">Data de nascimento do alimentando</label>
+                        <input type="date" class="form-control" name="birth-fed" placeholder="Ex: 10/01/1990">
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="haveMedicalExpenses" class="form-label">Despesas médicas? </label>
+                    <i class="bi bi-question-circle text-primary" data-bs-placement="right" data-bs-toggle="tooltip"
+                        data-bs-custom-class="custom-tooltip" title="Despesas com médico, clínica  ou odontologia ">
+                    </i>
+                    <select id="haveMedicalExpenses" class="form-select">
+                        <option selected>Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="não">Não</option>
+                    </select>
+                </div>
+
+                <div class="dataMedicalExpenses">
+
+                    <div class="col-12">
+                        <label for="name-medical-expenses" class="form-label">Nome do convenio/ clinica/ médico</label>
+                        <input type="text" class="form-control" name="name-medical-expenses" placeholder="Ex: Amil">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label for="cnpj-medical-expenses" class="form-label">CNPJ/ CPF</label>
+                        <input type="number" class="form-control" name="cnpj-medical-expenses"
+                            placeholder="99.888.777/0001-66">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label for="total-paid-medical-expenses" class="form-label">Valor total pago</label>
+                        <input type="text" class="form-control" name="total-paid-medical-expenses"
+                            placeholder="Ex: 12.305,43">
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="haveEducationExpenses" class="form-label">Despesas com educação/ instituição? </label>
+                    <select id="haveEducationExpenses" class="form-select">
+                        <option selected>Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="não">Não</option>
+                    </select>
+                </div>
+
+
+                <div class="dataEducationExpenses">
+
+                    <div class="col-12">
+                        <label for="name-education-expenses" class="form-label">Nome da instituição</label>
+                        <input type="text" class="form-control" name="name-education-expenses"
+                            placeholder="Ex: Uninove">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label for="cnpj-education-expenses" class="form-label">CNPJ da instituição</label>
+                        <input type="number" class="form-control" name="cnpj-education-expenses"
+                            placeholder="99.888.777/0001-66">
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <label for="total-paid-education-expenses" class="form-label">Total gasto</label>
+                        <input type="text" class="form-control" name="total-paid-education-expenses"
+                            placeholder="Ex: 12.305,43">
+                    </div>
+
+                </div>
+
+                <!-- <hr>
             <p>BENS E DIREITOS</p>
             <p>Informar patrimônio (bens) em seu nome (casa, apartamento, terreno, carro, fundos de investimentos, etc.) Informar data da compra, valor pago, forma de pagamento e situação do pagamento em 2020 e 2021
 
@@ -267,62 +333,144 @@
 
     </div> -->
 
-            <div class="col-md-4">
-                <label for="havePatrimony" class="form-label">Possui patrimônio? </label>
-                <select id="havePatrimony" class="form-select">
-                    <option selected>Selecione...</option>
-                    <option value="sim">Sim</option>
-                    <option value="não">Não</option>
-                </select>
-            </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="havePatrimony" class="form-label">Patrimônio? </label>
+                    <select id="havePatrimony" class="form-select">
+                        <option selected>Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="não">Não</option>
+                    </select>
+                </div>
 
-            <div class="typePatrimony">
+                <div class="typePatrimony">
 
-                <div class="col-md-4">
-                    <label for="typePatrimony" class="form-label">Selecione o tipo do patrimônio? </label>
-                    <select id="typePatrimony" class="form-select">
-                    <option selected>Selecione...</option>
-                    <option value="casa-apto-terreno">Casa /Apto /terreno</option>
-                    <option value="carro">Carro</option>
-                    <option value="fundo-investimentos">Fundo de investimentos</option>
-                </select>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <label for="typePatrimony" class="form-label">Selecione o tipo do patrimônio: </label>
+                        <select id="typePatrimony" class="form-select">
+                            <option selected>Selecione...</option>
+                            <option value="casa-apto-terreno">Casa /Apto /terreno</option>
+                            <option value="carro">Carro</option>
+                            <option value="fundo-investimentos">Fundo de investimentos</option>
+                        </select>
+                    </div>
+
                 </div>
 
             </div>
 
-            <div class="col-12">
-                <label for="bank" class="form-label">Banco</label>
-                <input type="text" class="form-control" name="bank" placeholder="Ex: Itau">
+            <!-- ============= end card ============ -->
+        </div>
+
+        <div class="card p-3 mt-3">
+
+            <h3 class="text-center">Dados bancários</h3>
+            <hr>
+
+            <div class="row g-3 ">
+
+                <div class="col-12">
+                    <label for="bank" class="form-label">Banco</label>
+                    <input type="text" class="form-control" name="bank" placeholder="Ex: Itau">
+                </div>
+
+                <div class="col-12 mt-3">
+                    <label for="bank-agency" class="form-label">Agencia</label>
+                    <input type="number" class="form-control" name="bank-agency" placeholder="1605">
+                </div>
+
+                <div class="col-12 mt-3">
+                    <label for="bank-number" class="form-label">Número da conta</label>
+                    <input type="number" class="form-control" name="bank-number" placeholder="Ex: 36624-4">
+                </div>
+
+            </div>
+            <!-- ============= end card ============ -->
+        </div>
+
+        <div class="card p-3 mt-3">
+
+            <div class="row g-3">
+
+                <div class="col-md-5">
+                    <label for="received-emergency-aid" class="form-label">Você ou algum dependente recebeu auxílio
+                        emergencial em 2021?</label>
+                    <select id="received-emergency-aid" class="form-select">
+                        <option selected>Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="não">Não</option>
+                    </select>
+                </div>
+
             </div>
 
-            <div class="col-12 mt-3">
-                <label for="bank-agency" class="form-label">Agencia</label>
-                <input type="number" class="form-control" name="bank-agency" placeholder="1605">
+            <!-- ============= end card ============ -->
+        </div>
+
+        <div class="card p-3 mt-3">
+
+            <div class="row g-3">
+
+                <h3 class="text-center">Envio de documentos</h3>
+                <hr>
+
+                <p> - Informe de rendimentos de salários, pró-labore, distribuição de lucros,
+                    aposentadoria ou pensão (do titular e dos dependentes se tiverem);<br> - Rendimentos de instituições
+                    financeiras, como bancos e corretora
+                    de investimentos;
+                    <br> - Rendimentos de aluguéis;<br> - Rendimentos como pensão alimentícia, doações e heranças;<br> -
+                    Resumo mensal do livro-caixa (se autônomo);<br> - Recibos de despesas médicas e odontológicas;<br> -
+                    Recibos de despesas com educação;<br> - Recibos/nota fiscal de serviços tomados de pessoas
+                    físicas;<br>
+                    - Documentos que comprove ônus e dívidas do ano a declarar, sejam eles pagos ou contraídos (ex:
+                    empréstimos)<br>
+                </p>
+
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Envio de documentos</label>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                </div>
+
             </div>
 
-            <div class="col-12 mt-3">
-                <label for="bank-number" class="form-label">Número da conta</label>
-                <input type="number" class="form-control" name="bank-number" placeholder="Ex: 36624-4">
+            <!-- ============= end card ============ -->
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary mt-3 px-5 py-2 btn-lg" type="submit">Finalizar
+                Formulário</button>
+        </div>
+
+
+
+
+
+
+
+        <div class="form-row clone">
+            <div class="card p-3 mt-3">
+
+                <div class="form-group col-md-12">
+
+                    <label for="typePatrimony" class="form-label py-3">Selecione o tipo do patrimônio:
+                    </label>
+                    <select id="typePatrimony" class="form-select ">
+                        <option selected>Selecione...</option>
+                        <option value="casa-apto-terreno">Casa /Apto /terreno</option>
+                        <option value="carro">Carro</option>
+                        <option value="fundo-investimentos">Fundo de investimentos</option>
+                    </select>
+
+                    <span class="badge rounded-pill text-bg-danger btn my-3 p-2 pointer hide">Deletar</span>
+                </div>
             </div>
+            <div id="containerPatrimony"></div>
+        </div>
 
-
-            <div class="col-md-5">
-                <label for="received-emergency-aid" class="form-label">Você ou algum dependente recebeu auxílio emergencial em 2021?</label>
-                <select id="received-emergency-aid" class="form-select">
-                    <option selected>Selecione...</option>
-                    <option value="sim">Sim</option>
-                    <option value="não">Não</option>
-                </select>
+        <div class="form-row">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-outline-success mt-3" id="addPatrimony">Adicionar patrimônio +</button>
             </div>
-
-            <div class="mb-3">
-                <label for="formFileMultiple" class="form-label">Envio de documentos</label>
-                <input class="form-control" type="file" id="formFileMultiple" multiple>
-            </div>
-
-
-            <button class="btn btn-primary mt-5" type="submit">Enviar</button>
-
+        </div>
 
 
 
@@ -332,9 +480,14 @@
     </div>
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
     <script src="./script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 
 </html>

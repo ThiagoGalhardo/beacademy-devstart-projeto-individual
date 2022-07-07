@@ -1,3 +1,13 @@
+// const tooltips = document.querySelectorAll('.tt')
+
+// tooltips.forEach(t => {
+//     new bootstrap.Tooltip(t)
+// })
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+
 let haveSpouse = document.querySelector('#haveSpouse')
 let dataSpouse = document.querySelector('.dataSpouse')
 
@@ -99,3 +109,60 @@ const onChange = (event) => {
 }
 
 window.addEventListener('load', setup)
+
+
+
+
+
+
+let addPatrimony = document.getElementById('addPatrimony');
+let contenido = document.getElementById('containerPatrimony');
+
+let boton_enviar = document.querySelector('#enviar_contacto')
+
+addPatrimony.addEventListener('click', e => {
+    e.preventDefault();
+    let clonado = document.querySelector('.clone');
+    let clon = clonado.cloneNode(true);
+
+    contenido.appendChild(clon).classList.remove('clone');
+
+    let remover_ocutar = contenido.lastChild.childNodes[1].querySelectorAll('span');
+    remover_ocutar[0].classList.remove('hide');
+});
+
+contenido.addEventListener('click', e => {
+    e.preventDefault();
+    if (e.target.classList.contains('pointer')) {
+        let containerPatrimony = e.target.parentNode.parentNode;
+
+        containerPatrimony.parentNode.removeChild(containerPatrimony);
+    }
+});
+
+
+boton_enviar.addEventListener('click', e => {
+    e.preventDefault();
+
+    const formulario = document.querySelector('#form_contacto');
+    const form = new FormData(formulario);
+
+    const peticion = {
+        body: form,
+        method: 'POST'
+    };
+
+    fetch('php/inserta-contacto.php', peticion)
+        .then(res => res.json())
+        .then(res => {
+            if (res['respuesta']) {
+                alert(res['mensaje']);
+                formulario.reset();
+            } else {
+                alert(res['mensaje']);
+            }
+
+        });
+
+
+});

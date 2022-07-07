@@ -1,3 +1,7 @@
+:root {
+    --bs-primary: #4d4dff;
+}
+
 .dataSpouse {
     /* visibility: hidden; */
     display: none;
@@ -49,4 +53,8 @@
 
 .typePatrimony.active {
     display: block;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bs-primary);
 }
