@@ -42,3 +42,11 @@
 .dataEducationExpenses.active {
     display: block;
 }
+
+.typePatrimony {
+    display: none;
+}
+
+.typePatrimony.active {
+    display: block;
+}

@@ -155,7 +155,7 @@
 
 
             <div class="col-md-4">
-                <label for="haveFed" class="form-label">Possui alimentados? </label>
+                <label for="haveFed" class="form-label">Possui alimentandos? </label>
                 <select id="haveFed" class="form-select">
                     <option selected>Selecione...</option>
                     <option value="sim">Sim</option>
@@ -166,13 +166,13 @@
             <div class="dataFed">
 
                 <div class="col-12">
-                    <label for="cpf-fed" class="form-label">CPF do alimentado</label>
+                    <label for="cpf-fed" class="form-label">CPF do alimentando</label>
                     <input type="number" class="form-control" name="cpf-fed" placeholder="123.456.789-10">
                 </div>
 
                 <div class="col-12 mt-3">
-                    <label for="birth-fed" class="form-label">Data do alimentado</label>
-                    <input type="text" class="form-control" name="birth-fed" placeholder="Ex: 10/01/1990">
+                    <label for="birth-fed" class="form-label">Data de nascimento do alimentando</label>
+                    <input type="date" class="form-control" name="birth-fed" placeholder="Ex: 10/01/1990">
                 </div>
 
             </div>
@@ -234,10 +234,94 @@
 
             </div>
 
+            <!-- <hr>
+            <p>BENS E DIREITOS</p>
+            <p>Informar patrimônio (bens) em seu nome (casa, apartamento, terreno, carro, fundos de investimentos, etc.) Informar data da compra, valor pago, forma de pagamento e situação do pagamento em 2020 e 2021
+
+            </p>
+
+            <p class="assets-and-rights">
+
+                <p>(PATRIMÔNIO 1)</p>
+
+                <div class="col-12">
+                    <label for="purchase-date" class="form-label">Data da compra</label>
+                    <input type="date" class="form-control" name="purchase-date" placeholder="Ex: 01/02/2021">
+                </div>
+
+                <div class="col-12 mt-3">
+                    <label for="total-paid-${DATE 2020}" class="form-label">Total pago em 2020</label>
+                    <input type="text" class="form-control" name="total-paid-${DATE 2020}" placeholder="Ex: 35.700,90">
+                </div>
+
+                <div class="col-12 mt-3">
+                    <label for="total-paid-${DATE 2021}" class="form-label">Total pago em 2021</label>
+                    <input type="text" class="form-control" name="total-paid-${DATE 2020}" placeholder="Ex: 15.900,00">
+                </div>
+
+                <div class="col-12 mt-3">
+                    <label for="data-assets-and-rights" class="form-label">Informar: matrícula do imóvel, cartório de registro, endereço completo e área total do imóvel, número do RENAVAN e placa do carro:											
+                    </label>
+                    <input type="text" class="form-control" name="data-assets-and-rights" placeholder="Ex: 12.305,43">
+                </div>
+
+    </div> -->
+
+            <div class="col-md-4">
+                <label for="havePatrimony" class="form-label">Possui patrimônio? </label>
+                <select id="havePatrimony" class="form-select">
+                    <option selected>Selecione...</option>
+                    <option value="sim">Sim</option>
+                    <option value="não">Não</option>
+                </select>
+            </div>
+
+            <div class="typePatrimony">
+
+                <div class="col-md-4">
+                    <label for="typePatrimony" class="form-label">Selecione o tipo do patrimônio? </label>
+                    <select id="typePatrimony" class="form-select">
+                    <option selected>Selecione...</option>
+                    <option value="casa-apto-terreno">Casa /Apto /terreno</option>
+                    <option value="carro">Carro</option>
+                    <option value="fundo-investimentos">Fundo de investimentos</option>
+                </select>
+                </div>
+
+            </div>
+
+            <div class="col-12">
+                <label for="bank" class="form-label">Banco</label>
+                <input type="text" class="form-control" name="bank" placeholder="Ex: Itau">
+            </div>
+
+            <div class="col-12 mt-3">
+                <label for="bank-agency" class="form-label">Agencia</label>
+                <input type="number" class="form-control" name="bank-agency" placeholder="1605">
+            </div>
+
+            <div class="col-12 mt-3">
+                <label for="bank-number" class="form-label">Número da conta</label>
+                <input type="number" class="form-control" name="bank-number" placeholder="Ex: 36624-4">
+            </div>
 
 
+            <div class="col-md-5">
+                <label for="received-emergency-aid" class="form-label">Você ou algum dependente recebeu auxílio emergencial em 2021?</label>
+                <select id="received-emergency-aid" class="form-select">
+                    <option selected>Selecione...</option>
+                    <option value="sim">Sim</option>
+                    <option value="não">Não</option>
+                </select>
+            </div>
 
-            <button type="submit">Enviar</button>
+            <div class="mb-3">
+                <label for="formFileMultiple" class="form-label">Envio de documentos</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple>
+            </div>
+
+
+            <button class="btn btn-primary mt-5" type="submit">Enviar</button>
 
 
 
