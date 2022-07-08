@@ -2,8 +2,12 @@
     --bs-primary: #4d4dff;
 }
 
-.dataSpouse {
-    /* visibility: hidden; */
+.dataSpouse,
+.dataDependents,
+.dataFed,
+.dataMedicalExpenses,
+.dataEducationExpenses,
+.dataPatrimony {
     display: none;
 }
 
@@ -11,50 +15,32 @@
     display: block;
 }
 
-.dataDependents {
-    /* visibility: hidden; */
-    display: none;
-}
-
 .dataDependents.active {
     display: block;
-}
-
-.dataFed {
-    /* visibility: hidden; */
-    display: none;
 }
 
 .dataFed.active {
     display: block;
 }
 
-.dataMedicalExpenses {
-    /* visibility: hidden; */
-    display: none;
-}
-
 .dataMedicalExpenses.active {
     display: block;
-}
-
-.dataEducationExpenses {
-    /* visibility: hidden; */
-    display: none;
 }
 
 .dataEducationExpenses.active {
     display: block;
 }
 
-.typePatrimony {
-    display: none;
-}
-
-.typePatrimony.active {
+.dataPatrimony.active {
     display: block;
 }
 
 .custom-tooltip {
     --bs-tooltip-bg: var(--bs-primary);
+}
+
+#textarea-medical-expenses,
+#textarea-education-expenses {
+    height: 300px;
+    resize: none;
 }
