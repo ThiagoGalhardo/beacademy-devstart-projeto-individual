@@ -1,7 +1,3 @@
-:root {
-    --bs-primary: #4d4dff;
-}
-
 .dataSpouse,
 .dataDependents,
 .dataFed,
@@ -36,7 +32,7 @@
 }
 
 .custom-tooltip {
-    --bs-tooltip-bg: var(--bs-primary) !important;
+    --bs-tooltip-bg: #AB838B !important;
 }
 
 #textarea-medical-expenses,

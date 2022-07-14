@@ -13,11 +13,6 @@
     --blue-dark: #231955;
 }
 
-body {
-    height: 93vh;
-    height: 100%;
-}
-
 
 /* HEADER */
 
@@ -155,4 +150,14 @@ header .container nav .menu li a {
 
 .footer {
     background-color: var(--gray-color);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #AB838B;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 14px rgba(207, 107, 107, 0.5);
+}
+
+::selection {
+    background: var(--primary-color);
 }

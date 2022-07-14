@@ -7,7 +7,7 @@
 <main class="main-content mt-5 col d-flex align-items-center">
 
     <div class="container mt-5">
-        <div class="row d-flex justify-content-between">
+        <div class="row d-flex justify-content-around">
             <div class="col-md-5">
                 <figure><img src="{{ url('img/img-main.svg') }}" alt=""></figure>
             </div>
