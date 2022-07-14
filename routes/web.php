@@ -18,4 +18,5 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/', [PageController::class, 'index'])->name('page.index');
+Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/form', [FormController::class, 'form'])->name('form');

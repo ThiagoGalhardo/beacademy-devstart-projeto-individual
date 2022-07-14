@@ -39,10 +39,10 @@
             <nav class="main-navigation">
                 <ul class="menu">
                     <li class="menu-item"><a href="/" class="menu-item">Início</a></li>
-                    <li class="menu-item"><a href="#about" class="menu-item">Sobre mim</a></li>
-                    <li class="menu-item"><a href="#experience" class="menu-item">Experiência</a></li>
-                    <li class="menu-item"><a href="#service" class="menu-item">Serviços</a></li>
-                    <li class="menu-item"><a href="#contact" class="menu-item">Contato</a></li>
+                    <li class="menu-item"><a href="/about" class="menu-item">Sobre mim</a></li>
+                    <li class="menu-item"><a href="/experience" class="menu-item">Experiência</a></li>
+                    <li class="menu-item"><a href="/services" class="menu-item">Serviços</a></li>
+                    <li class="menu-item"><a href="/contact" class="menu-item">Contato</a></li>
                 </ul>
             </nav>
     </header>

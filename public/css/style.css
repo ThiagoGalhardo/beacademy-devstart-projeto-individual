@@ -13,6 +13,11 @@
     --blue-dark: #231955;
 }
 
+body {
+    height: 93vh;
+    height: 100%;
+}
+
 
 /* HEADER */
 
