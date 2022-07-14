@@ -1,0 +1,46 @@
+:root {
+    --bs-primary: #4d4dff;
+}
+
+.dataSpouse,
+.dataDependents,
+.dataFed,
+.dataMedicalExpenses,
+.dataEducationExpenses,
+.dataPatrimony {
+    display: none;
+}
+
+.dataSpouse.active {
+    display: block;
+}
+
+.dataDependents.active {
+    display: block;
+}
+
+.dataFed.active {
+    display: block;
+}
+
+.dataMedicalExpenses.active {
+    display: block;
+}
+
+.dataEducationExpenses.active {
+    display: block;
+}
+
+.dataPatrimony.active {
+    display: block;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bs-primary) !important;
+}
+
+#textarea-medical-expenses,
+#textarea-education-expenses {
+    height: 300px;
+    resize: none;
+}
