@@ -25,7 +25,7 @@
                 <p class="mb-0" style="text-decoration: line-through;">De: R$ 200,00</p>
 
                 <p>Por: <strong> R$ 149,99 </strong> </p>
-                <a href="#" class="btn btn-primary">Comprar Agora</a>
+                <a href="/register" class="btn btn-primary">Comprar Agora</a>
             </div>
         </div>
 
@@ -38,20 +38,5 @@
 
 
 <style>
-    .btn-primary {
-        color: #f1f1f1 !important;
-        background-color: #AB838B !important;
-        border-color: #AB838B !important;
-    }
 
-    .btn-primary:hover {
-        color: #f1f1f1 !important;
-        background-color: #785259 !important;
-        border-color: #785259 !important;
-    }
-
-    .btn-primary:focus,
-    .btn-primary.focus {
-        box-shadow: 0 0 0 .2rem rgba(120, 82, 89, 0.5) !important;
-    }
 </style>

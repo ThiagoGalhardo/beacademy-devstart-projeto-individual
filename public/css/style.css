@@ -165,3 +165,32 @@ header .container nav .menu li a {
 .footer {
     height: 10vh;
 }
+
+.btn-primary {
+    color: #f1f1f1 !important;
+    background-color: #AB838B !important;
+    border-color: #AB838B !important;
+}
+
+.btn-primary:hover {
+    color: #f1f1f1 !important;
+    background-color: #785259 !important;
+    border-color: #785259 !important;
+}
+
+.btn-secondary {
+    color: #0c0c0c !important;
+    background-color: #DDA9B2 !important;
+    border-color: #d799a4 !important;
+}
+
+.btn-secondary:hover {
+    color: #f1f1f1 !important;
+    background-color: #c06373 !important;
+    border-color: #DDA9B2 !important;
+}
+
+.btn-primary:focus,
+.btn-secondary:focus {
+    box-shadow: 0 0 0 .2rem rgba(120, 82, 89, 0.5) !important;
+}

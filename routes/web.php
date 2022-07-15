@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\FormController;
+
+
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
@@ -22,4 +24,5 @@ Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/services', [PageController::class, 'services'])->name('page.services');
 Route::get('/contact', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/products', [PageController::class, 'products'])->name('page.products');
+
 Route::get('/form', [FormController::class, 'form'])->name('form');

@@ -41,10 +41,27 @@
                     <li class="menu-item"><a href="/about" class="menu-item">Sobre mim</a></li>
                     <li class="menu-item"><a href="/services" class="menu-item">Serviços</a></li>
                     <li class="menu-item"><a href="/contact" class="menu-item">Contato</a></li>
-                    <li class="menu-item"><a href="/products" class="menu-item">Declaração de IR
+                    <!-- <li class="menu-item"><a href="/products" class="menu-item">Declaração de IR
                             @php
                             echo date('Y');
-                            @endphp</a></li>
+                            @endphp</a></li> -->
+
+
+
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                DECLARAÇÃO DE IR
+                                @php
+                                echo date('Y');
+                                @endphp
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="/products">Fazer Declaração</a></li>
+                                <li><a class="dropdown-item" href="/login">Acompanhar pedido</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </nav>
     </header>
