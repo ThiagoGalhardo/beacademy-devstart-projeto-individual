@@ -41,19 +41,26 @@
                     <li class="menu-item"><a href="/about" class="menu-item">Sobre mim</a></li>
                     <li class="menu-item"><a href="/services" class="menu-item">Serviços</a></li>
                     <li class="menu-item"><a href="/contact" class="menu-item">Contato</a></li>
+                    <li class="menu-item"><a href="/products" class="menu-item">Declaração de IR
+                            @php
+                            echo date('Y');
+                            @endphp</a></li>
                 </ul>
             </nav>
     </header>
 
-    <div class="container-main">
-        @yield('content')
-    </div>
+
+    @yield('content')
+
 
 
 
     <footer>
         <div class="text-center p-4 footer">
-            © 2022 Copyright:
+            © @php
+            echo date('Y');
+            @endphp
+            Copyright:
             <a class="text-reset fw-bold" href="https://galhardo.tech/">Feito com ♥ por Thiago Galhardo </a>
         </div>
     </footer>

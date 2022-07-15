@@ -4,7 +4,7 @@
 
 <!-- ============== ABOUT ============ -->
 
-<div class="container mt-5">
+<div class="container container-main mt-5">
 
     <div class="team p-5">
         <h3 class="mb-0">Larissa Garcia</h3>

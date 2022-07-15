@@ -36,7 +36,8 @@
 }
 
 #textarea-medical-expenses,
-#textarea-education-expenses {
+#textarea-education-expenses,
+#textarea-patrimony {
     height: 300px;
     resize: none;
 }

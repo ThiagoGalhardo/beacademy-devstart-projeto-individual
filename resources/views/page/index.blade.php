@@ -4,7 +4,7 @@
 
 <!-- ============== HERO ============ -->
 
-<main class="main-content mt-5 col d-flex align-items-center">
+<main class="container-main mt-5 col d-flex align-items-center">
 
     <div class="container mt-5">
         <div class="row d-flex justify-content-around">

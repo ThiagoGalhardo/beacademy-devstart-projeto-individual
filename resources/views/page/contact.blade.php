@@ -4,10 +4,10 @@
 
 <!-- ============== ABOUT ============ -->
 
-<div class="container mt-5">
+<div class="container container-main mt-5">
 
     <div class="form-contact row pt-3 justify-content-around align-items-center">
-        <p class="text-center fs-3">Contato</p>
+        <h3 class="text-center fs-4 m-0 pt-3">Contato</h3>
         <p class="text-center fs-6">Possui alguma dúvida? Mande uma mensagem!</p>
         <hr>
 
@@ -17,11 +17,11 @@
 
         <div class="card col-lg-5 p-3 ms-5" style="background-color: #DDA9B2;">
             <form>
-                <div class="mb-3">
+                <div class="mb-2">
                     <label for="name" class="form-label">Nome</label>
                     <input type="text" class="form-control" id="name" name="name">
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email">
                 </div>
