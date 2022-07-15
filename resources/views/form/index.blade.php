@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="{{ url('css/form.css') }}">
 @extends('template.index')
 @section('title', 'Formulário IR')
-@section('body')
+@section('content')
 
 
-<!-- ============ Start card Dados pessoais ============ -->
+
 
 <div class="card p-3 mt-5">
 

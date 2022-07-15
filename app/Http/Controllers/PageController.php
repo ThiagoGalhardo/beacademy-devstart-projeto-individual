@@ -16,6 +16,10 @@ class PageController extends Controller
         return view('page.about');
     }
 
+    public function services()
+    {
+        return view('page.services');
+    }
 
     public function contact()
     {

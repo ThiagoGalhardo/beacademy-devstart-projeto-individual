@@ -1,6 +1,6 @@
 @extends('template.index')
-@section('title', 'Página inicial')
-@section('body')
+@section('title', 'Contato')
+@section('content')
 
 <!-- ============== ABOUT ============ -->
 
