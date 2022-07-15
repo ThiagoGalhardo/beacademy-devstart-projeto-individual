@@ -18,16 +18,12 @@
 
                     <div class="mb-3">
                         <label for="email" :value="__('Email')" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" :value="__('Password')" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="password" required>
+                        <input type="password" class="form-control" id="password" name="password" required>
                     </div>
-                    <!-- <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div> -->
                     <div>
                         <a class="me-3" href="{{ route('password.request') }}">Esqueceu a senha?</a>
                         <button type="submit" class="btn btn-primary ms-5">Entrar</button>
