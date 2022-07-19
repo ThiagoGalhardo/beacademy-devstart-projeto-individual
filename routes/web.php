@@ -19,10 +19,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
+
+
+
 Route::get('/', [PageController::class, 'index'])->name('page.index');
 Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/services', [PageController::class, 'services'])->name('page.services');
 Route::get('/contact', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/products', [PageController::class, 'products'])->name('page.products');
 
-Route::get('/form', [FormController::class, 'form'])->name('form');
+Route::get('/form', [FormController::class, 'form'])->middleware(['auth'])->name('form');
+Route::get('/choose', [PageController::class, 'choose'])->middleware(['auth'])->name('page.choose');

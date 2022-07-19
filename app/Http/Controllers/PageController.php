@@ -30,4 +30,9 @@ class PageController extends Controller
     {
         return view('page.products');
     }
+
+    public function choose()
+    {
+        return view('page.choose');
+    }
 }

@@ -2,16 +2,12 @@
 @section('title', 'Entrar')
 @section('content')
 
-<!-- ============== HERO ============ -->
-
 <main class="container-main mt-5 pt-5">
 
-    <div class=" mt-5 ">
-        <h3 class="text-center">Entrar</h3>
-    </div>
     <div class="container p-3 d-flex justify-content-center">
 
-        <div class="card" style="width: 20rem;">
+        <div class="card" style="width: 25rem;">
+            <h3 class="text-center fs-4 mt-2">Entrar</h3>
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -26,14 +22,16 @@
                     </div>
                     <div>
                         <a class="me-3" href="{{ route('password.request') }}">Esqueceu a senha?</a>
-                        <button type="submit" class="btn btn-primary ms-5">Entrar</button>
+                        <button type="submit" class="btn btn-primary ms-5 px-5">Entrar</button>
                     </div>
-
                 </form>
             </div>
         </div>
 
-
+        <div class="text-center p-2  ms-5">
+            <h3 class="fs-5">Não possui uma conta?</h3>
+            <a href="/register" class="btn btn-primary text-center">Criar agora</a>
+        </div>
     </div>
 
 </main>

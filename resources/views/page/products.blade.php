@@ -25,7 +25,7 @@
                 <p class="mb-0" style="text-decoration: line-through;">De: R$ 200,00</p>
 
                 <p>Por: <strong> R$ 149,99 </strong> </p>
-                <a href="/register" class="btn btn-primary">Comprar Agora</a>
+                <a href="/choose" class="btn btn-primary">Comprar Agora</a>
             </div>
         </div>
 
