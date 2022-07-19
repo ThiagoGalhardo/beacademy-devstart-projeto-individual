@@ -40,21 +40,25 @@
             <div class="row g-3 mt-0">
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <label for="zipcode" class="form-label">Cep</label>
-                    <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="Ex: 000.00-000">
+                    <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="Ex: 17560246" onkeypress="$(this).mask('00000000')">
                 </div>
             </div>
 
-            <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class=" col-lg-6 col-md-6 col-sm-12">
                 <label for="address" class="form-label">Endereço</label>
                 <input type="text" class="form-control" name="address" id="address" placeholder="Rua das flores">
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="col-lg-2 col-md-2 col-sm-12">
                 <label for="number-house" class="form-label">Número</label>
                 <input type="text" class="form-control" name="number-house" id="number-house" placeholder="Ex: 50">
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <label for="complement-house" class="form-label">Complemento</label>
                 <input type="text" class="form-control" name="complement-house" id="complement-house" placeholder="Ex: Apto 105, bloco 2">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <label for="district" class="form-label">Bairro</label>
+                <input type="text" class="form-control" name="district" id="district" placeholder="Ex: Paranaguá">
             </div>
             <div class="col-md-5">
                 <label for="city" class="form-label">Cidade</label>
@@ -450,5 +454,8 @@
 </style>
 
 @section('scripts')
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/form.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
 @stop
