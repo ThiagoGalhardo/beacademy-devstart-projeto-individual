@@ -1,15 +1,14 @@
 <?php
 
 
-
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\FormController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    PageController,
+    FormController,
+    UserController
+};
 
 require __DIR__ . '/auth.php';
-
-
 
 Route::get('/', function () {
     return view('page.index');
@@ -27,7 +26,8 @@ Route::get('/services', [PageController::class, 'services'])->name('page.service
 Route::get('/contact', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/products', [PageController::class, 'products'])->name('page.products');
 
+Route::get('/users', [UserController::class, 'index'])->name('users.list');
+
+
 Route::get('/form', [FormController::class, 'form'])->middleware(['auth'])->name('form');
 Route::get('/choose', [PageController::class, 'choose'])->middleware(['auth'])->name('page.choose');
-
-Route::resource('/users', 'UserController')->middleware(['auth']);
