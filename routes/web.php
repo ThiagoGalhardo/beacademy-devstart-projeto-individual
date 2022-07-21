@@ -27,6 +27,10 @@ Route::get('/contact', [PageController::class, 'contact'])->name('page.contact')
 Route::get('/products', [PageController::class, 'products'])->name('page.products');
 
 Route::get('/users', [UserController::class, 'index'])->name('users.list');
+Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 
 Route::get('/form', [FormController::class, 'form'])->middleware(['auth'])->name('form');

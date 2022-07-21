@@ -22,9 +22,9 @@
                 <th scope="row">{{ $user->id }}</th>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
-                <td>{{ date('d/m/Y', strtotime($user->updated_at)) }}</td>
-                <td><a href="#" class="btn btn-outline-success text-dark">Visualizar</a></td>
+                <td>{{ date('d/m/Y - H:i:s', strtotime($user->created_at)) }}</td>
+                <td>{{ date('d/m/Y - H:i:s', strtotime($user->updated_at)) }}</td>
+                <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-success text-white">Visualizar</a></td>
             </tr>
             @endforeach
         </tbody>

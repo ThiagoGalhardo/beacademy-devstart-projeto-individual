@@ -9,26 +9,12 @@
     </div>
     <div class="container p-3 d-flex justify-content-center">
 
-
-
-
-
-
         <div class="card" style="width: 20rem;">
 
             <div class="card-body">
                 <form class="needs-validation" method="POST" action="{{ route('register') }}" novalidate>
                     @method('POST')
                     @csrf
-
-                    <!-- <div class="mb-3">
-                        <label for="name" class="form-label">Nome completo</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
-                    </div> -->
-                    <!-- Session Status -->
-                    <!-- <x-auth-session-status class="mb-4" :status="session('status')" /> -->
-
-
 
                     <div class="">
                         <label for="name" class="form-label">Nome completo</label>
