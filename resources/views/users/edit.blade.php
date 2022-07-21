@@ -17,7 +17,7 @@
                     @method('PUT')
                     @csrf
 
-                    <div class="">
+                    <div class="mb-3">
                         <label for="name" class="form-label">Nome completo</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ $user->name }}" required autofocus>
 
