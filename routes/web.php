@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
@@ -20,8 +21,6 @@ Route::get('/dashboard', function () {
 
 
 
-
-
 Route::get('/', [PageController::class, 'index'])->name('page.index');
 Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/services', [PageController::class, 'services'])->name('page.services');
@@ -30,3 +29,5 @@ Route::get('/products', [PageController::class, 'products'])->name('page.product
 
 Route::get('/form', [FormController::class, 'form'])->middleware(['auth'])->name('form');
 Route::get('/choose', [PageController::class, 'choose'])->middleware(['auth'])->name('page.choose');
+
+Route::resource('/users', 'UserController')->middleware(['auth']);

@@ -11,7 +11,12 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_that_true_is_true()
+    public function test_check_if_user_columns_is_correct()
+    {
+        $this->assertTrue(true);
+    }
+
+    public function test_check_if_user_can_see_form_page()
     {
         $this->assertTrue(true);
     }
