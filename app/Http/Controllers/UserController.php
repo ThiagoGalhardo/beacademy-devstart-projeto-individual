@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -73,5 +74,17 @@ class UserController extends Controller
 
         $user->delete();
         return redirect()->route('users.list');
+    }
+
+    public function account($id)
+    {
+        if (!$user = $this->model->find($id)) {
+            return redirect()->route('page.index');
+        }
+
+        if (Auth::user()->id != $id)
+            return redirect()->route('page.index');
+
+        return view('users.account', compact('user'));
     }
 }

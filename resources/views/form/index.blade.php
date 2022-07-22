@@ -1,4 +1,6 @@
 <link rel="stylesheet" type="text/css" href="{{ url('css/form.css') }}">
+
+
 @extends('template.index')
 @section('title', 'Formulário IR')
 @section('content')
@@ -10,7 +12,7 @@
         <h3 class="text-center mt-5">Dados pessoais</h3>
         <hr>
 
-        <form class="row g-3" method="POST">
+        <form class="row g-3" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="col-12">
                 <label for="name" class="form-label">Nome</label>
@@ -415,7 +417,10 @@
 
             <div class="mb-3">
                 <label for="file-upload" class="form-label">Envio de documentos</label>
-                <input class="form-control" name="file-upload" type="file" enctype="multipart/form-data" id="file-upload" multiple>
+                <input class="form-control" name="files-upload[]" type="file" enctype="multipart/form-data" id="files" multiple>
+
+
+
             </div>
 
         </div>
@@ -426,6 +431,7 @@
     <div class="text-center">
         <button class="btn btn-primary mt-5 mb-5 px-5 py-2 btn-lg" type="submit">Finalizar
             Formulário</button>
+
     </div>
 
     </form>
@@ -433,6 +439,8 @@
 </div>
 
 @endsection
+
+<!-- Turn all file input elements into ponds -->
 
 <style>
     .btn-primary {

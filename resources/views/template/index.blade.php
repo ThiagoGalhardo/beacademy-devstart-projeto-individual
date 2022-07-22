@@ -22,6 +22,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url('css/reset.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('css/style.css') }}">
 
+    <!-- ========= API ========= -->
+
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+
     <title>@yield('title')</title>
 </head>
 
@@ -37,10 +41,10 @@
             </div>
             <nav class="main-navigation">
                 <ul class="menu">
-                    <li class="menu-item"><a href="/" class="menu-item">Início</a></li>
-                    <li class="menu-item"><a href="/about" class="menu-item">Sobre mim</a></li>
-                    <li class="menu-item"><a href="/services" class="menu-item">Serviços</a></li>
-                    <li class="menu-item"><a href="/contact" class="menu-item">Contato</a></li>
+                    <li class="menu-item"><a href="/">Início</a></li>
+                    <li class="menu-item"><a href="/about">Sobre mim</a></li>
+                    <li class="menu-item"><a href="/services">Serviços</a></li>
+                    <li class="menu-item"><a href="/contact">Contato</a></li>
                     <!-- <li class="menu-item"><a href="/products" class="menu-item">Declaração de IR
                             @php
                             echo date('Y');
@@ -60,10 +64,40 @@
                                 <li><a class="dropdown-item" href="/products">Fazer Declaração</a></li>
                                 <li><a class="dropdown-item" href="/login">Acompanhar pedido</a></li>
                             </ul>
-                        </div>
+                            @if(Auth::user())
+                    <li class="nav-item">
+                        <a href="#">{{ Auth::user()->name }}</a>
                     </li>
-                </ul>
-            </nav>
+
+
+                    @if(Auth::user()->is_admin == 1)
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{{ route('page.index') }}">Dashboard</a>
+                    </li>
+                    @endif
+                    <li class="nav-item">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                this.closest('form').submit();">
+                                Sair
+                            </a>
+
+                        </form>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a href="{{ route('login') }}">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('register') }}">Registrar-se</a>
+                    </li>
+                    @endif
+        </div>
+        </li>
+        </ul>
+        </nav>
     </header>
 
 
@@ -82,6 +116,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     @yield('scripts')

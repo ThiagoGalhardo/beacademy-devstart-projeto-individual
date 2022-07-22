@@ -71,6 +71,7 @@ header .container nav .menu li a {
 
 .menu-item:hover a {
     border-bottom: 3px solid var(--primary-color);
+    transition: all 0.10s;
 }
 
 .toggle {
