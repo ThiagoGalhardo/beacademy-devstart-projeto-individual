@@ -2,26 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Form;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
+
+    protected $user;
+    protected $form;
+
+    public function __construct(User $user, Form $form)
+    {
+        $this->user = $user;
+        $this->post = $form;
+    }
+
     public function form()
     {
         return view('form.index');
     }
 
 
-    // public function store(Request $request)
-    // {
-    //     $temporaryFile = TemporaryFile::where('folder', $request->files)->first();
+    public function store(Request $request)
+    {
+        $data = $request->all();
 
-    //     if ($temporaryFile) {
-    //         $user->addMedia(storage_path('app/public/files/tmp/' . $request->files . '/' . $temporaryFile->filename)
-    //             ->toMediaCollection('files'));
+        dd($data);
 
-    //         rmdir(storage_path('app/public/files/tmp' . $request->files));
-    //         $temporaryFile->delete();
-    //     }
-    // }
+        return redirect()->route('page.index');
+    }
 }

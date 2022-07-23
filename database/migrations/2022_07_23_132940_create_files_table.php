@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->foreignId('form_id')
-                ->constrained('users')
+                ->constrained('forms')
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
             $table->string('filenames');

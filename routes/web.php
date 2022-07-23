@@ -4,8 +4,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     PageController,
-    FormController,
     UserController,
+    FormController,
     FileController,
 };
 
@@ -43,6 +43,9 @@ Route::middleware('admin')->group(function () {
     Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
+
+
+Route::post('/form', [FormController::class, 'store'])->name('form.store');
 
 
 Route::get('/file', [FileController::class, 'create']);

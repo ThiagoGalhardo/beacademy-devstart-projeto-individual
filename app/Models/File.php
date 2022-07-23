@@ -16,8 +16,7 @@ class File extends Model
 
     public function form()
     {
-        return $this->belongsTo(User::class);
-        // Alterar para Form depois que criar a model
+        return $this->belongsTo(Form::class);
     }
 
     public function setFilenamesAttribute($value)
