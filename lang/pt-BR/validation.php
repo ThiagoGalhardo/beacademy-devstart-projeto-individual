@@ -183,6 +183,29 @@ return [
         'title'     => 'título',
         'username'  => 'usuário',
         'year'      => 'ano',
+
+
+
+
+        'birthday'               => 'data de nascimento',
+        'doc-voter'              => 'título de eleitor',
+        'zipcode'                => 'cep',
+        'number-house'           => 'número',
+        'district'               => 'bairro',
+        'change-address'         => 'teve mudança de endereço',
+        'have-deficiency'        => 'possui deficiência',
+        'occupation'             => 'ocupação',
+        'haveSpouse'             => 'cônjuge',
+        'haveDependents'         => 'possui dependentes',
+        'haveFed'                => 'possui alimentandos',
+        'haveMedicalExpenses'    => 'possui despesas médicas',
+        'haveEducationExpenses'  => 'possui despesas com educação',
+        'havePatrimony'          => 'possui patrimônio',
+        'bank'                   => 'banco',
+        'bank-agency'            => 'agencia',
+        'bank-number'            => 'número da conta',
+        'received-emergency-aid' => 'recebeu auxílio emergencial',
+
         'description' => 'descrição',
         'password_confirmation' => 'confirmação da senha',
         'current_password' => 'senha atual',

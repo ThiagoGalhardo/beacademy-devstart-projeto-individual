@@ -104,3 +104,38 @@ window.addEventListener('load', setup)
 
 
 // ==========================================================
+
+// window.onload = function() { alert("Está carregado!") }
+
+
+
+// window.onload = function() {
+
+//     var haveValues = {
+//         haveSpouse: haveSpouse.value,
+//         haveDependents: haveDependents.value,
+//         haveFed: haveFed.value,
+//         haveMedicalExpenses: haveMedicalExpenses.value,
+//         haveEducationExpenses: haveEducationExpenses.value,
+//         havePatrimony: havePatrimony.value
+//     };
+
+//     switch (haveValues) {
+
+//         case haveValues.haveSpouse == "sim":
+//             dataSpouse.classList.toggle('active')
+
+
+//         case haveValues.haveMedicalExpenses == "sim":
+//             dataMedicalExpenses.classList.toggle('active')
+
+//             console.log(haveMedicalExpenses.value);
+
+
+//         default:
+//             break;
+//     }
+
+
+//     console.log();
+// }

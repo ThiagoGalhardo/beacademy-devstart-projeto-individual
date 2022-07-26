@@ -37,7 +37,7 @@ class Form extends Model
         'birth-dependents',
         'kinship-dependents',
         'live-with-dependents',
-        'haveFed',
+        'have-fed',
         'name-fed',
         'cpf-fed',
         'birth-fed',
