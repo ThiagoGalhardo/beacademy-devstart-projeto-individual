@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\File;
+use App\Models\Form;
 use Illuminate\Support\Facades\Auth;
 
 class FileController extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $form;
+
+    public function __construct(Form $form)
+    {
+        $this->form = $form;
+    }
+
     public function create()
     {
         return view('create');
@@ -26,10 +29,11 @@ class FileController extends Controller
     public function store(Request $request)
     {
 
-        $this->validate($request, [
-            'filenames' => 'required',
-            'filenames.*' => 'required'
-        ]);
+
+        // $this->validate($request, [
+        //     'filenames' => 'required',
+        //     'filenames.*' => 'required'
+        // ]);
 
         $userId = Auth::user()->id;
 
@@ -43,10 +47,11 @@ class FileController extends Controller
                 $file->storeAs('files/' . $userId, $name);
             }
         }
-        // dd($file->id);
 
         $file = new File();
         $file->filenames = $files;
+        $file->form_id = "999";
+
         $file->save();
 
 

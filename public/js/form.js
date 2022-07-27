@@ -105,37 +105,53 @@ window.addEventListener('load', setup)
 
 // ==========================================================
 
-// window.onload = function() { alert("Está carregado!") }
+let haveChoose = [
+    [
+        haveSpouse.value,
+        dataSpouse
+    ],
+    [
+        haveDependents.value,
+        dataDependents
+    ],
+    [
+        haveFed.value,
+        dataFed
+    ],
+    [
+        haveMedicalExpenses.value,
+        dataMedicalExpenses
+    ],
+    [
+        haveEducationExpenses.value,
+        dataEducationExpenses
+    ],
+    [
+        havePatrimony.value,
+        dataPatrimony
+    ],
+]
+
+
+haveChoose.forEach((value) => {
+    console.log(value[1]);
+
+    if (value[0] == "sim") {
+        value[1].classList.toggle('active')
+    } else {
+        value[1].classList.remove('active')
+    }
+
+})
 
 
 
-// window.onload = function() {
-
-//     var haveValues = {
-//         haveSpouse: haveSpouse.value,
-//         haveDependents: haveDependents.value,
-//         haveFed: haveFed.value,
-//         haveMedicalExpenses: haveMedicalExpenses.value,
-//         haveEducationExpenses: haveEducationExpenses.value,
-//         havePatrimony: havePatrimony.value
-//     };
-
-//     switch (haveValues) {
-
-//         case haveValues.haveSpouse == "sim":
-//             dataSpouse.classList.toggle('active')
-
-
-//         case haveValues.haveMedicalExpenses == "sim":
-//             dataMedicalExpenses.classList.toggle('active')
-
-//             console.log(haveMedicalExpenses.value);
-
-
-//         default:
-//             break;
-//     }
-
-
-//     console.log();
-// }
+$(document).ready(function() {
+    $(".btn-success").click(function() {
+        var lsthmtl = $(".clone").html();
+        $(".increment").after(lsthmtl);
+    });
+    $("body").on("click", ".btn-danger", function() {
+        $(this).parents(".destroy").remove();
+    });
+});

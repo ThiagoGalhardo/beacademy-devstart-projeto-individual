@@ -45,3 +45,7 @@
 #files {
     height: 300px;
 }
+
+.hide {
+    visibility: hidden;
+}

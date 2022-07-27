@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUpdateFormRequest;
+use App\Models\File;
 use App\Models\Form;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -39,13 +40,22 @@ class FormController extends Controller
         $data['have-education-expenses'] = $request->haveEducationExpenses;
 
 
-        $this->form->create($data);
+        $userId = Auth::user()->id;
 
-        // Form::create($data);
+        $files = [];
+        if ($request->hasfile('filenames')) {
+            foreach ($request->file('filenames') as $file) {
+                $name = time() . rand(1, 100) . '.' . $file->extension();
+                $files[] = $name;
+                $file->storeAs('files/' . $userId, $name);
+            }
+        }
 
-        // $file = new File();
-        // $file->filenames = $files;
-        // $file->save();
+        $file = new File();
+        $file->filenames = $files;
+        $file->form_id = $this->form->create($data)->id;
+
+        $file->save();
 
         return redirect()->route('page.index');
     }
