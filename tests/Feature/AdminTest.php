@@ -50,25 +50,6 @@ class AdminTest extends TestCase
         $response->assertStatus(200);
     }
 
-    // public function test_check_if_admin_can_delete_users()
-    // {
-    //     $admin =  User::create([
-    //         'name' => 'Test Example',
-    //         'email' => 'test' . uniqid() . '@example.com',
-    //         'password' => '12345678',
-    //         'is_admin' => 1
-    //     ]);
-
-    //     $this->actingAs($admin);
-    //     $id = User::all()->random()->id;
-
-    //     $response = $this->actingAs($admin)
-    //         ->delete("/users/$id");
-
-    //     $response->assertRedirect('/users');
-    // }
-
-
     public function test_check_if_admin_can_delete_users()
     {
         $admin =  User::create([
