@@ -27,26 +27,20 @@ Route::get('/services', [PageController::class, 'services'])->name('page.service
 Route::get('/contact', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/products', [PageController::class, 'products'])->name('page.products');
 
-
-
 Route::get('/account/{id}', [UserController::class, 'account'])->name('users.account');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/form', [FormController::class, 'form'])->name('form');
+    Route::post('/form', [FormController::class, 'store'])->name('form.store');
+    Route::get('/choose', [PageController::class, 'choose'])->name('page.choose');
+    Route::get('/file', [FileController::class, 'create']);
+    Route::post('/file', [FileController::class, 'store']);
+});
 
-Route::get('/form', [FormController::class, 'form'])->middleware(['auth'])->name('form');
-Route::get('/choose', [PageController::class, 'choose'])->middleware(['auth'])->name('page.choose');
-
-
-Route::middleware('admin')->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.list');
     Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
     Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
     Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
-
-
-Route::post('/form', [FormController::class, 'store'])->name('form.store');
-
-
-Route::get('/file', [FileController::class, 'create']);
-Route::post('/file', [FileController::class, 'store']);

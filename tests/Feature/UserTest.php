@@ -27,7 +27,13 @@ class UserTest extends TestCase
 
     public function test_check_if_user_can_see_form_page()
     {
-        $user = User::factory()->create();
+        // $user = User::factory()->create();
+        $user =  User::create([
+            'name' => 'Test Example',
+            'email' => 'test' . uniqid() . '@example.com',
+            'password' => '12345678',
+        ]);
+
         $this->actingAs($user);
         $response = $this->get('/form');
         $response->assertStatus(200);
@@ -37,7 +43,13 @@ class UserTest extends TestCase
 
     public function test_check_if_user_can_see_users_list()
     {
-        $user = User::factory()->create();
+        // $user = User::factory()->create();
+        $user =  User::create([
+            'name' => 'Test Example',
+            'email' => 'test' . uniqid() . '@example.com',
+            'password' => '12345678',
+        ]);
+
         $this->actingAs($user);
         $response = $this->get('/users');
         $response->assertStatus(302);
@@ -45,7 +57,13 @@ class UserTest extends TestCase
 
     public function test_check_if_user_can_see_edit_user()
     {
-        $user = User::factory()->create();
+        // $user = User::factory()->create();
+        $user =  User::create([
+            'name' => 'Test Example',
+            'email' => 'test' . uniqid() . '@example.com',
+            'password' => '12345678',
+        ]);
+
         $this->actingAs($user);
         $id = User::all()->random()->id;
         $response = $this->get("/users/{$id}/edit");
@@ -54,7 +72,13 @@ class UserTest extends TestCase
 
     public function test_check_if_user_can_delete_user()
     {
-        $user = User::factory()->create();
+        // $user = User::factory()->create();
+        $user =  User::create([
+            'name' => 'Test Example',
+            'email' => 'test' . uniqid() . '@example.com',
+            'password' => '12345678',
+        ]);
+
         $this->actingAs($user);
         $id = User::all()->random()->id;
         $response = $this->actingAs($user)

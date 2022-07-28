@@ -19,7 +19,7 @@ class IsAdmin
     {
         $user = $request->user();
 
-        if ($user && $user->is_admin == 1) {
+        if ($user && Auth::user() && $user->is_admin == 1) {
             return $next($request);
         }
 
