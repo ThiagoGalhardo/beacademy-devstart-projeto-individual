@@ -7,6 +7,7 @@ use App\Http\Controllers\{
     UserController,
     FormController,
     FileController,
+    OrderController,
 };
 
 require __DIR__ . '/auth.php';
@@ -27,7 +28,7 @@ Route::get('/services', [PageController::class, 'services'])->name('page.service
 Route::get('/contact', [PageController::class, 'contact'])->name('page.contact');
 Route::get('/products', [PageController::class, 'products'])->name('page.products');
 
-Route::get('/account/{id}', [UserController::class, 'account'])->name('users.account');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/form', [FormController::class, 'form'])->name('form');
@@ -35,6 +36,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/choose', [PageController::class, 'choose'])->name('page.choose');
     Route::get('/file', [FileController::class, 'create']);
     Route::post('/file', [FileController::class, 'store']);
+
+    Route::post('/orders', [OrderController::class, 'storeOrder'])->name('users.saveOrder');
+
+    Route::get('/account/{id}', [UserController::class, 'account'])->name('users.account');
+    Route::get('/account/{id}/orders', [OrderController::class, 'showOrders'])->name('users.orders');
+    Route::get('/account/{id}/checkout', [OrderController::class, 'checkout'])->name('users.checkout');
 });
 
 Route::middleware(['admin'])->group(function () {

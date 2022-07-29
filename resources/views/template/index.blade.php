@@ -66,7 +66,7 @@
                             </ul>
                             @if(Auth::user())
                     <li class="nav-item">
-                        <a href="#">{{ Auth::user()->name }}</a>
+                        <a href="/account/{{ Auth::user()->id }}">{{ Auth::user()->name }}</a>
                     </li>
 
 

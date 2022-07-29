@@ -58,7 +58,6 @@
                     </div>
 
                     <div class="d-flex justify-content-around">
-                        <!-- <button type="submit" class="btn btn-danger ">Cancelar</button> -->
                         <a href="{{ route('users.list') }}" class="btn btn-danger btn-block">Cancelar</a>
                         <button type="submit" class="btn btn-success ">Atualizar</button>
                     </div>

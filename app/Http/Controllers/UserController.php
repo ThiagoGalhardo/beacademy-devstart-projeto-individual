@@ -87,4 +87,17 @@ class UserController extends Controller
 
         return view('users.account', compact('user'));
     }
+
+    // public function orders($id)
+    // {
+    //     if (!$user = $this->model->find($id)) {
+    //         return redirect()->route('page.index');
+    //     }
+
+
+    //     if (Auth::user()->id != $id)
+    //         return redirect()->route('page.index');
+
+    //     return view('users.orders', compact('user'));
+    // }
 }

@@ -1,69 +1,41 @@
-<html lang="en">
+@extends('template.index')
+@section('title', 'Lista de usuários')
+@section('content')
 
-<head>
-    <title>Laravel 8 Multiple File Upload Example - ItSolutionStuff.com</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
 
-<body>
 
-    <div class="container lst">
+<div class="container-main mt-5 pt-5">
+    <div class="container p-5">
 
-        @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <strong>Sorry!</strong> There were more problems with your HTML input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <h3>Olá, {{ Auth::user()->name }} </h3>
+
+        <hr>
+
+        <div class="container mt-5 d-flex justify-content-center">
+            <a class="btn btn-primary me-3" href="/account/{{ Auth::user()->id }}/orders">Seus pedidos</a>
+            <a class="btn btn-primary ms-3" href="/account/{{ Auth::user()->id }}">Suas informações</a>
         </div>
-        @endif
 
-        @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
+        <h4 class="mt-5 mb-3 text-center">Suas informações</h4>
 
-        <h3 class="well">Laravel 8 Multiple File Upload - ItSolutionStuff.com</h3>
+        <div class=" mt-3"></div>
+        <table class="table table-hover table-danger table-striped">
+            <thead class="text-center">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Data de Cadastro</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ date('d/m/Y - H:i:s', strtotime($user->created_at)) }}</td>
+                </tr>
 
-        <form method="post" action="{{url('file')}}" enctype="multipart/form-data">
-            @csrf
-
-            <div class="input-group hdtuto control-group lst increment">
-                <input type="file" name="filenames[]" class="myfrm form-control">
-                <div class="input-group-btn">
-                    <button class="btn btn-success" type="button"><i class="fldemo glyphicon glyphicon-plus"></i>Add</button>
-                </div>
-            </div>
-            <div class="clone hide">
-                <div class="hdtuto control-group lst input-group" style="margin-top:10px">
-                    <input type="file" name="filenames[]" class="myfrm form-control">
-                    <div class="input-group-btn">
-                        <button class="btn btn-danger" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-success" style="margin-top:10px">Submit</button>
-
-        </form>
+            </tbody>
+        </table>
     </div>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".btn-success").click(function() {
-                var lsthmtl = $(".clone").html();
-                $(".increment").after(lsthmtl);
-            });
-            $("body").on("click", ".btn-danger", function() {
-                $(this).parents(".hdtuto").remove();
-            });
-        });
-    </script>
-
-</body>
-
-</html>
+</div>
