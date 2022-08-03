@@ -21,4 +21,16 @@ class Order extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getOrders(string $search = null)
+    {
+        $orders = $this->where(function ($query) use ($search) {
+            if ($search) {
+                $query->where('id', $search);
+                $query->orWhere('status', 'LIKE', "%{$search}%");
+            }
+        })
+            ->paginate(5);
+        return $orders;
+    }
 }

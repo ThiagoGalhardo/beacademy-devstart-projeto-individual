@@ -2,28 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Form;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    protected $user;
+    protected $order;
 
-    public function __construct(User $user)
+    public function __construct(User $user, Order $order)
     {
         $this->model = $user;
+        $this->order = $order;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
+        $users = $this->model->getUsers(
+            $request->search ?? ''
+        );
 
         return view('users.list', compact('users'));
     }
 
     function create()
     {
-        return view('register');
+        return view('register')->with('create', 'Produto cadastrado!');
     }
 
     public function store(Request $request)
@@ -36,7 +43,10 @@ class UserController extends Controller
         if (!$user = User::find($id))
             return redirect()->route('users.list');
 
-        return view('users.show', compact('user'));
+        $user = $this->model->where("id", $id)->get();
+        $orders = $this->order->where("user_id", $id)->get();
+
+        return view('users.show', compact('user', 'orders'));
     }
 
 
@@ -63,7 +73,7 @@ class UserController extends Controller
 
         $data['password'] = $user->password;
         $user->update($data);
-        return redirect()->route('users.list');
+        return redirect()->route('users.list')->with('update', 'Usuário alterado!');
     }
 
 
@@ -73,7 +83,7 @@ class UserController extends Controller
             return redirect()->route('users.list');
 
         $user->delete();
-        return redirect()->route('users.list');
+        return redirect()->route('users.list')->with('destroy', 'Usuário excluído!');
     }
 
     public function account($id)

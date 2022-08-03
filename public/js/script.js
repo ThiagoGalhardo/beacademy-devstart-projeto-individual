@@ -1,6 +1,6 @@
 const INPUT_ZIPCODE = document.getElementById('zipcode');
 const INPUT_ADDRESS = document.getElementById('address');
-const INPUT_NUMBER_HOUSE = document.getElementById('number-house');
+const INPUT_NUMBER_HOUSE = document.getElementById('number_house');
 const INPUT_DISTRICT = document.getElementById('district');
 const INPUT_CITY = document.getElementById('city');
 const INPUT_STATE = document.getElementById('state');

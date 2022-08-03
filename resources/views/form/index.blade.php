@@ -6,10 +6,12 @@
 <div class="container">
 
     @if($errors->any())
-    <div class="alert alert-danger">
-        @foreach($errors->all() as $error)
-        {{$error}}<br>
-        @endforeach
+    <div class="mt-5 pt-5">
+        <div class="alert alert-danger pt-3">
+            @foreach($errors->all() as $error)
+            {{$error}}<br>
+            @endforeach
+        </div>
     </div>
     @endif
 
@@ -72,9 +74,9 @@
                     @enderror
                 </div>
                 <div class=" col-lg-3 col-md-3 col-sm-12">
-                    <label for="doc-voter" class="form-label">Título de Eleitor</label>
-                    <input type="text" class="form-control @error('doc-voter') is-invalid @enderror" name="doc-voter" id="doc-voter" placeholder="0043 5687 09 06" value="{{ old('doc-voter') }}">
-                    @error('doc-voter')
+                    <label for="doc_voter" class="form-label">Título de Eleitor</label>
+                    <input type="text" class="form-control @error('doc_voter') is-invalid @enderror" name="doc_voter" id="doc_voter" placeholder="0043 5687 09 06" value="{{ old('doc_voter') }}">
+                    @error('doc_voter')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -103,17 +105,17 @@
                     @enderror
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-12">
-                    <label for="number-house" class="form-label">Número</label>
-                    <input type="text" class="form-control @error('number-house') is-invalid @enderror" name="number-house" id="number-house" placeholder="Ex: 50" value="{{ old('number-house') }}">
-                    @error('number-house')
+                    <label for="number_house" class="form-label">Número</label>
+                    <input type="text" class="form-control @error('number_house') is-invalid @enderror" name="number_house" id="number_house" placeholder="Ex: 50" value="{{ old('number_house') }}">
+                    @error('number_house')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                     @enderror
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                    <label for="complement-house" class="form-label">Complemento</label>
-                    <input type="text" class="form-control" name="complement-house" id="complement-house" placeholder="Ex: Apto 105, bloco 2" value="{{ old('complement-house') }}">
+                    <label for="complement_house" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" name="complement_house" id="complement_house" placeholder="Ex: Apto 105, bloco 2" value="{{ old('complement_house') }}">
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12">
                     <label for="district" class="form-label">Bairro</label>
@@ -168,16 +170,16 @@
                 </div>
 
                 <div class="col-md-6 col-sm-12">
-                    <label for="change-address" class="form-label">Teve mudança de endereço em
+                    <label for="change_address" class="form-label">Teve mudança de endereço em
                         @php
                         echo date('Y') -1;
                         @endphp?</label>
-                    <select id="change-address" name="change-address" class="form-select @error('change-address') is-invalid @enderror" value="{{ old('change-address') }}">
+                    <select id="change_address" name="change_address" class="form-select @error('change_address') is-invalid @enderror" value="{{ old('change_address') }}">
                         <option selected>Selecione...</option>
-                        <option value="sim" @if (old('change-address')=='sim' ) {{ 'selected' }} @endif>Sim</option>
-                        <option value="não" @if (old('change-address')=='não' ) {{ 'selected' }} @endif>Não</option>
+                        <option value="sim" @if (old('change_address')=='sim' ) {{ 'selected' }} @endif>Sim</option>
+                        <option value="não" @if (old('change_address')=='não' ) {{ 'selected' }} @endif>Não</option>
                     </select>
-                    @error('change-address')
+                    @error('change_address')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -185,14 +187,14 @@
                 </div>
 
                 <div class="col-md-6 col-sm-12">
-                    <label for="have-deficiency" class="form-label">Possui deficiência física ou mental?</label>
+                    <label for="have_deficiency" class="form-label">Possui deficiência física ou mental?</label>
                     <i class="bi bi-question-circle text-primary" data-bs-placement="right" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" title="Incluindo dependentes"> </i>
-                    <select id="have-deficiency" name="have-deficiency" class="form-select @error('have-deficiency') is-invalid @enderror" value="{{ old('have-deficiency') }}">
+                    <select id="have_deficiency" name="have_deficiency" class="form-select @error('have_deficiency') is-invalid @enderror" value="{{ old('have_deficiency') }}">
                         <option selected>Selecione...</option>
-                        <option value="sim" value="sim" @if (old('have-deficiency')=='sim' ) {{ 'selected' }} @endif>Sim</option>
-                        <option value="não" value="sim" @if (old('have-deficiency')=='não' ) {{ 'selected' }} @endif>Não</option>
+                        <option value="sim" value="sim" @if (old('have_deficiency')=='sim' ) {{ 'selected' }} @endif>Sim</option>
+                        <option value="não" value="sim" @if (old('have_deficiency')=='não' ) {{ 'selected' }} @endif>Não</option>
                     </select>
-                    @error('have-deficiency')
+                    @error('have_deficiency')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -225,12 +227,12 @@
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <label for="number-register" class="form-label">Nº do registro de classe (OAB, CRM...) </label>
-                    <input type="text" class="form-control" name="number-register" id="number-register" value="{{ old('number-register') }}">
+                    <label for="number_register" class="form-label">Nº do registro de classe (OAB, CRM...) </label>
+                    <input type="text" class="form-control" name="number_register" id="number_register" value="{{ old('number_register') }}">
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <label for="number-last-ir" class="form-label">Nº da ultima declaração do IR </label>
-                    <input type="text" class="form-control" name="number-last-ir" id="number-last-ir" value="{{ old('number-last-ir') }}">
+                    <label for="number_last_ir" class="form-label">Nº da ultima declaração do IR </label>
+                    <input type="text" class="form-control" name="number_last_ir" id="number_last_ir" value="{{ old('number_last_ir') }}">
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-sm-12">
@@ -251,8 +253,8 @@
                 <div class="dataSpouse">
 
                     <div class="col-12">
-                        <label for="cpf-spouse" class="form-label">CPF do cônjuge ou companheiro(a)</label>
-                        <input type="text" class="form-control" name="cpf-spouse" id="cpf-spouse" placeholder="123.456.789-10" value="{{ old('cpf-spouse') }}">
+                        <label for="cpf_spouse" class="form-label">CPF do cônjuge ou companheiro(a)</label>
+                        <input type="text" class="form-control" name="cpf_spouse" id="cpf_spouse" placeholder="123.456.789-10" value="{{ old('cpf_spouse') }}">
                     </div>
 
                 </div>
@@ -280,35 +282,35 @@
                     </div>
 
                     <div class="col-12">
-                        <label for="name-dependents" class="form-label">Nome do dependente</label>
-                        <input type="text" class="form-control" name="name-dependents" id="name-dependents" placeholder="Ex: João da Silva" value="{{ old('name-dependents') }}">
+                        <label for="name_dependents" class="form-label">Nome do dependente</label>
+                        <input type="text" class="form-control" name="name_dependents" id="name_dependents" placeholder="Ex: João da Silva" value="{{ old('name_dependents') }}">
 
 
 
                     </div>
 
                     <div class="col-12 mt-3">
-                        <label for="cpf-dependents" class="form-label">CPF do dependente</label>
-                        <input type="text" class="form-control" name="cpf-dependents" id="cpf-dependents" placeholder="123.456.789-10" value="{{ old('cpf-dependents') }}">
+                        <label for="cpf_dependents" class="form-label">CPF do dependente</label>
+                        <input type="text" class="form-control" name="cpf_dependents" id="cpf_dependents" placeholder="123.456.789-10" value="{{ old('cpf_dependents') }}">
                     </div>
 
                     <div class="col-12 mt-3">
-                        <label for="birth-dependents" class="form-label">Data de nascimento do dependente</label>
-                        <input type="date" class="form-control" name="birth-dependents" id="birth-dependents" placeholder="Ex: 10/01/1990" value="{{ old('birth-dependents') }}">
+                        <label for="birth_dependents" class="form-label">Data de nascimento do dependente</label>
+                        <input type="date" class="form-control" name="birth_dependents" id="birth_dependents" placeholder="Ex: 10/01/1990" value="{{ old('birth_dependents') }}">
                     </div>
 
                     <div class="col-12 mt-3">
-                        <label for="kinship-dependents" class="form-label">Grau de parentesco</label>
-                        <input type="text" class="form-control" name="kinship-dependents" id="kinship-dependents" placeholder="Ex: Filho" value="{{ old('kinship-dependents') }}">
+                        <label for="kinship_dependents" class="form-label">Grau de parentesco</label>
+                        <input type="text" class="form-control" name="kinship_dependents" id="kinship_dependents" placeholder="Ex: Filho" value="{{ old('kinship_dependents') }}">
                     </div>
 
                     <div class="col-md-4 mt-3">
-                        <label for="live-with-dependents" class="form-label">O dependente mora com você? </label>
+                        <label for="live_with_dependents" class="form-label">O dependente mora com você? </label>
 
-                        <select id="live-with-dependents" name="live-with-dependents" class="form-select">
+                        <select id="live_with_dependents" name="live_with_dependents" class="form-select">
                             <option selected>Selecione...</option>
-                            <option value="sim" @if (old('live-with-dependents')=='sim' ) {{ 'selected' }} @endif>Sim</option>
-                            <option value="não" @if (old('live-with-dependents')=='não' ) {{ 'selected' }} @endif>Não</option>
+                            <option value="sim" @if (old('live_with_dependents')=='sim' ) {{ 'selected' }} @endif>Sim</option>
+                            <option value="não" @if (old('live_with_dependents')=='não' ) {{ 'selected' }} @endif>Não</option>
                         </select>
                     </div>
 
@@ -338,18 +340,18 @@
                     </div>
 
                     <div class="col-12">
-                        <label for="name-fed" class="form-label">Nome do alimentando</label>
-                        <input type="text" class="form-control" name="name-fed" id="name-fed" placeholder="Ex: José Silva" value="{{ old('name-fed') }}">
+                        <label for="name_fed" class="form-label">Nome do alimentando</label>
+                        <input type="text" class="form-control" name="name_fed" id="name_fed" placeholder="Ex: José Silva" value="{{ old('name_fed') }}">
                     </div>
 
                     <div class="col-12">
-                        <label for="cpf-fed" class="form-label">CPF do alimentando</label>
-                        <input type="text" class="form-control" name="cpf-fed" id="cpf-fed" placeholder="123.456.789-10" value="{{ old('cpf-fed') }}">
+                        <label for="cpf_fed" class="form-label">CPF do alimentando</label>
+                        <input type="text" class="form-control" name="cpf_fed" id="cpf_fed" placeholder="123.456.789-10" value="{{ old('cpf_fed') }}">
                     </div>
 
                     <div class="col-12 mt-3">
-                        <label for="birth-fed" class="form-label">Data de nascimento do alimentando</label>
-                        <input type="date" class="form-control" name="birth-fed" id="birth-fed" placeholder="Ex: 10/01/1990" value="{{ old('birth-fed') }}">
+                        <label for="birth_fed" class="form-label">Data de nascimento do alimentando</label>
+                        <input type="date" class="form-control" name="birth_fed" id="birth_fed" placeholder="Ex: 10/01/1990" value="{{ old('birth_fed') }}">
                     </div>
 
                 </div>
@@ -393,8 +395,8 @@
                         (consultas, exames, tratamento odontológico, psicólogo) enviar o recibo/nota fiscal/comprovante
                         da despesa.
                     </p>
-                    <div class="textarea-medical-expenses">
-                        <textarea class="form-control" placeholder="Descreva aqui" name="textarea-medical-expenses" id="textarea-medical-expenses">{{ old('textarea-medical-expenses') }}</textarea>
+                    <div class="textarea_medical_expenses">
+                        <textarea class="form-control" placeholder="Descreva aqui" name="textarea_medical_expenses" id="textarea_medical_expenses">{{ old('textarea_medical_expenses') }}</textarea>
                     </div>
 
                 </div>
@@ -423,8 +425,8 @@
                         echo date('Y')-1;
                         @endphp.
                     </p>
-                    <div class="textarea-education-expenses">
-                        <textarea class="form-control " placeholder="Descreva aqui" name="textarea-education-expenses" id="textarea-education-expenses">{{ old('textarea-education-expenses') }}</textarea>
+                    <div class="textarea_education_expenses">
+                        <textarea class="form-control " placeholder="Descreva aqui" name="textarea_education_expenses" id="textarea_education_expenses">{{ old('textarea_education_expenses') }}</textarea>
                     </div>
 
                 </div>
@@ -456,8 +458,8 @@
                         @endphp, matrícula, cartório de registro, endereço completo e área total do imóvel, número do RENAVAN e placa do carro.
 
                     </p>
-                    <div class="textarea-patrimony">
-                        <textarea class="form-control " placeholder="Descreva aqui" name="textarea-patrimony" id="textarea-patrimony">{{ old('textarea-patrimony') }}</textarea>
+                    <div class="textarea_patrimony">
+                        <textarea class="form-control " placeholder="Descreva aqui" name="textarea_patrimony" id="textarea_patrimony">{{ old('textarea_patrimony') }}</textarea>
                     </div>
 
                 </div>
@@ -486,9 +488,9 @@
                 </div>
 
                 <div class="col-12 mt-3">
-                    <label for="bank-agency" class="form-label">Agencia</label>
-                    <input type="text" class="form-control @error('bank-agency') is-invalid @enderror" name="bank-agency" id="bank-agency" placeholder="Ex: 1605" value="{{ old('bank-agency') }}">
-                    @error('bank-agency')
+                    <label for="bank_agency" class="form-label">Agencia</label>
+                    <input type="text" class="form-control @error('bank_agency') is-invalid @enderror" name="bank_agency" id="bank_agency" placeholder="Ex: 1605" value="{{ old('bank_agency') }}">
+                    @error('bank_agency')
                     <div class=" invalid-feedback">
                         {{ $message }}
                     </div>
@@ -496,9 +498,9 @@
                 </div>
 
                 <div class="col-12 mt-3">
-                    <label for="bank-number" class="form-label">Número da conta</label>
-                    <input type="text" class="form-control  @error('bank-number') is-invalid @enderror" name="bank-number" id="bank-number" placeholder="Ex: 36624-4" value="{{ old('bank-number') }}">
-                    @error('bank-number')
+                    <label for="bank_number" class="form-label">Número da conta</label>
+                    <input type="text" class="form-control  @error('bank_number') is-invalid @enderror" name="bank_number" id="bank_number" placeholder="Ex: 36624-4" value="{{ old('bank_number') }}">
+                    @error('bank_number')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -515,17 +517,17 @@
             <div class="row g-3">
 
                 <div class="col-md-5">
-                    <label for="received-emergency-aid" class="form-label">Você ou algum dependente recebeu auxílio
+                    <label for="received_emergency_aid" class="form-label">Você ou algum dependente recebeu auxílio
                         emergencial em
                         @php
                         echo date('Y')-1;
                         @endphp?</label>
-                    <select id="received-emergency-aid" name="received-emergency-aid" class="form-select  @error('received-emergency-aid') is-invalid @enderror">
+                    <select id="received_emergency_aid" name="received_emergency_aid" class="form-select  @error('received_emergency_aid') is-invalid @enderror">
                         <option selected>Selecione...</option>
-                        <option value="sim" @if (old('received-emergency-aid')=='sim' ) {{ 'selected' }} @endif>Sim</option>
-                        <option value="não" @if (old('received-emergency-aid')=='não' ) {{ 'selected' }} @endif>Não</option>
+                        <option value="sim" @if (old('received_emergency_aid')=='sim' ) {{ 'selected' }} @endif>Sim</option>
+                        <option value="não" @if (old('received_emergency_aid')=='não' ) {{ 'selected' }} @endif>Não</option>
                     </select>
-                    @error('received-emergency-aid')
+                    @error('received_emergency_aid')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

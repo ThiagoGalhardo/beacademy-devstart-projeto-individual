@@ -35,9 +35,9 @@
     --bs-tooltip-bg: #AB838B !important;
 }
 
-#textarea-medical-expenses,
-#textarea-education-expenses,
-#textarea-patrimony {
+#textarea_medical_expenses,
+#textarea_education_expenses,
+#textarea_patrimony {
     height: 300px;
     resize: none;
 }

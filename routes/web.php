@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/orders', [OrderController::class, 'storeOrder'])->name('users.saveOrder');
     Route::get('admin/orders', [OrderController::class, 'showAllOrders'])->name('orders.listAll');
     Route::get('admin/orders/{id}', [OrderController::class, 'showOrdersUserAdmin'])->name('orders.listOrderUserforAdmin');
+    Route::put('/admin/orders/{id}', [OrderController::class, 'update'])->name('orders.update');
 
     Route::get('/account/{id}', [UserController::class, 'account'])->name('users.account');
     Route::get('/account/{id}/orders', [OrderController::class, 'showOrders'])->name('users.orders');

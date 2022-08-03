@@ -27,7 +27,6 @@
                     <th scope="col">Data de solicitação</th>
                     <th scope="col">Valor pago</th>
                     <th scope="col">Status</th>
-                    <th scope="col">visualizar</th>
                 </tr>
             </thead>
             <tbody class="text-center">
@@ -39,7 +38,6 @@
                     <td>{{$order->created_at}}</td>
                     <td>{{$order->price}}</td>
                     <td>{{$order->status}}</td>
-                    <td><a href="{{ route('users.show', $order->id) }}" class="btn btn-primary text-dark">Visualizar</a></td>
 
                 </tr>
                 @endforeach

@@ -14,7 +14,6 @@
         <div class="container mt-5 d-flex justify-content-center">
             <a class="btn btn-primary me-3 px-4" href="{{route('users.list')}}">Listar usuários</a>
             <a class="btn btn-primary me-3 px-4" href="/admin/orders">Listar pedidos</a>
-            <a class="btn btn-primary ms-3" href="/account/{{ Auth::user()->id }}">Suas informações</a>
         </div>
 
 
@@ -22,11 +21,17 @@
 </div>
 
 
-<div class="container-main pt-5">
+<div class="container-main ">
 
     <div class="container mt-5">
         <h1 class="text-center">Lista de pedidos</h1>
         <hr>
+        <div class="col mb-3">
+            <form class="d-flex mb-4" action="{{ route('orders.listAll') }}" method="GET">
+                <input class="form-control me-2" type="search" name="search">
+                <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
+            </form>
+        </div>
         <table class="table table-hover table-danger table-striped">
             <thead class="text-center">
                 <tr>
@@ -49,12 +54,15 @@
                     <td>{{ $order->price }}</td>
                     <td>{{ $order->status }}</td>
                     <td>{{ $order->created_at }}</td>
-                    <td>{{ $order->update_at }}</td>
+                    <td>{{ $order->updated_at }}</td>
                     <td><a href="{{route('orders.listOrderUserforAdmin', $order->user_id )}}" class="btn btn-primary text-dark">Visualizar</a></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+        <div class=" container mt-5 justify-content-center pagination">
+            {{ $orders->links('pagination::bootstrap-4') }}
+        </div>
     </div>
 
 </div>

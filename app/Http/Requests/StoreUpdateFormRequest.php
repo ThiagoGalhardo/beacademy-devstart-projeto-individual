@@ -47,7 +47,7 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:14'
             ],
 
-            'doc-voter' => [
+            'doc_voter' => [
                 'required',
                 'string',
                 'min:12',
@@ -67,13 +67,13 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:255'
             ],
 
-            'number-house' => [
+            'number_house' => [
                 'required',
                 'string',
                 'max:10'
             ],
 
-            'complement-house' => [
+            'complement_house' => [
                 'nullable',
                 'string',
                 'max:50'
@@ -97,13 +97,13 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:2'
             ],
 
-            'change-address' => [
+            'change_address' => [
                 'required',
                 'string',
                 'max:3'
             ],
 
-            'have-deficiency' => [
+            'have_deficiency' => [
                 'required',
                 'string',
                 'max:3'
@@ -115,13 +115,13 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:50'
             ],
 
-            'number-register' => [
+            'number_register' => [
                 'nullable',
                 'string',
                 'max:50'
             ],
 
-            'number-last-ir' => [
+            'number_last_ir' => [
                 'nullable',
                 'string',
                 'max:50'
@@ -133,7 +133,7 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-            'cpf-spouse' => [
+            'cpf_spouse' => [
                 'nullable',
                 'string',
                 'min:11',
@@ -147,32 +147,32 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-            'name-dependents' => [
+            'name_dependents' => [
                 'nullable',
                 'string',
                 'min:3',
                 'max:255'
             ],
 
-            'cpf-dependents' => [
+            'cpf_dependents' => [
                 'nullable',
                 'string',
                 'min:11',
                 'max:14'
             ],
 
-            'birth-dependents' => [
+            'birth_dependents' => [
                 'nullable',
                 'date'
             ],
 
-            'kinship-dependents' => [
+            'kinship_dependents' => [
                 'nullable',
                 'string',
                 'max:50'
             ],
 
-            'live-with-dependents' => [
+            'live_with_dependents' => [
                 'nullable',
                 'string',
             ],
@@ -183,21 +183,21 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-            'name-fed' => [
+            'name_fed' => [
                 'nullable',
                 'string',
                 'min:3',
                 'max:255'
             ],
 
-            'cpf-fed' => [
+            'cpf_fed' => [
                 'nullable',
                 'string',
                 'min:11',
                 'max:14'
             ],
 
-            'birth-fed' => [
+            'birth_fed' => [
                 'nullable',
                 'date'
             ],
@@ -208,7 +208,7 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-            // 'textarea-medical-expenses' => [
+            // 'textarea_medical_expenses' => [
             //     'text'
             // ],
 
@@ -219,7 +219,7 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-            // 'textarea-education-expenses' => [
+            // 'textarea_education_expenses' => [
             //     'text'
             // ],
 
@@ -229,7 +229,7 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-            // 'textarea-patrimony' => [
+            // 'textarea_patrimony' => [
             //     'text'
             // ],
 
@@ -241,21 +241,21 @@ class StoreUpdateFormRequest extends FormRequest
             ],
 
 
-            'bank-agency' => [
+            'bank_agency' => [
                 'required',
                 'string',
                 'min:3',
                 'max:20'
             ],
 
-            'bank-number' => [
+            'bank_number' => [
                 'required',
                 'string',
                 'min:3',
                 'max:20'
             ],
 
-            'received-emergency-aid' => [
+            'received_emergency_aid' => [
                 'required',
                 'string',
                 'max:3'

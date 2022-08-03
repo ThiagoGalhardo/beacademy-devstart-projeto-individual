@@ -32,13 +32,14 @@ class FormController extends Controller
         $data = $request->all();
 
         $data['user_id'] = Auth::user()->id;
-        $data['have-spouse'] = $request->haveSpouse;
-        $data['have-dependents'] = $request->haveDependents;
-        $data['have-fed'] = $request->haveFed;
-        $data['have-medical-expenses'] = $request->haveMedicalExpenses;
-        $data['have-patrimony'] = $request->havePatrimony;
-        $data['have-education-expenses'] = $request->haveEducationExpenses;
+        $data['have_spouse'] = $request->haveSpouse;
+        $data['have_dependents'] = $request->haveDependents;
+        $data['have_fed'] = $request->haveFed;
+        $data['have_medical_expenses'] = $request->haveMedicalExpenses;
+        $data['have_patrimony'] = $request->havePatrimony;
+        $data['have_education_expenses'] = $request->haveEducationExpenses;
 
+        // dd($data);
 
         $userId = Auth::user()->id;
 
