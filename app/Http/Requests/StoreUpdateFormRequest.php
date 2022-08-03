@@ -147,35 +147,6 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-            'name_dependents' => [
-                'nullable',
-                'string',
-                'min:3',
-                'max:255'
-            ],
-
-            'cpf_dependents' => [
-                'nullable',
-                'string',
-                'min:11',
-                'max:14'
-            ],
-
-            'birth_dependents' => [
-                'nullable',
-                'date'
-            ],
-
-            'kinship_dependents' => [
-                'nullable',
-                'string',
-                'max:50'
-            ],
-
-            'live_with_dependents' => [
-                'nullable',
-                'string',
-            ],
 
             'haveFed' => [
                 'required',
@@ -183,34 +154,12 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-            'name_fed' => [
-                'nullable',
-                'string',
-                'min:3',
-                'max:255'
-            ],
-
-            'cpf_fed' => [
-                'nullable',
-                'string',
-                'min:11',
-                'max:14'
-            ],
-
-            'birth_fed' => [
-                'nullable',
-                'date'
-            ],
 
             'haveMedicalExpenses' => [
                 'required',
                 'string',
                 'max:3'
             ],
-
-            // 'textarea_medical_expenses' => [
-            //     'text'
-            // ],
 
 
             'haveEducationExpenses' => [
@@ -219,19 +168,11 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-            // 'textarea_education_expenses' => [
-            //     'text'
-            // ],
-
             'havePatrimony' => [
                 'required',
                 'string',
                 'max:3'
             ],
-
-            // 'textarea_patrimony' => [
-            //     'text'
-            // ],
 
             'bank' => [
                 'required',

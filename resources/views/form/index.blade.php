@@ -274,6 +274,7 @@
                     @enderror
                 </div>
 
+
                 <div class="dataDependents">
 
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -281,37 +282,15 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
 
-                    <div class="col-12">
-                        <label for="name_dependents" class="form-label">Nome do dependente</label>
-                        <input type="text" class="form-control" name="name_dependents" id="name_dependents" placeholder="Ex: João da Silva" value="{{ old('name_dependents') }}">
-
-
-
-                    </div>
-
-                    <div class="col-12 mt-3">
-                        <label for="cpf_dependents" class="form-label">CPF do dependente</label>
-                        <input type="text" class="form-control" name="cpf_dependents" id="cpf_dependents" placeholder="123.456.789-10" value="{{ old('cpf_dependents') }}">
-                    </div>
-
-                    <div class="col-12 mt-3">
-                        <label for="birth_dependents" class="form-label">Data de nascimento do dependente</label>
-                        <input type="date" class="form-control" name="birth_dependents" id="birth_dependents" placeholder="Ex: 10/01/1990" value="{{ old('birth_dependents') }}">
-                    </div>
-
-                    <div class="col-12 mt-3">
-                        <label for="kinship_dependents" class="form-label">Grau de parentesco</label>
-                        <input type="text" class="form-control" name="kinship_dependents" id="kinship_dependents" placeholder="Ex: Filho" value="{{ old('kinship_dependents') }}">
-                    </div>
-
-                    <div class="col-md-4 mt-3">
-                        <label for="live_with_dependents" class="form-label">O dependente mora com você? </label>
-
-                        <select id="live_with_dependents" name="live_with_dependents" class="form-select">
-                            <option selected>Selecione...</option>
-                            <option value="sim" @if (old('live_with_dependents')=='sim' ) {{ 'selected' }} @endif>Sim</option>
-                            <option value="não" @if (old('live_with_dependents')=='não' ) {{ 'selected' }} @endif>Não</option>
-                        </select>
+                    <p> Descreva os seguintes dados:
+                        <br>Nome do dependente
+                        <br>CPF do dependente
+                        <br>Data de nascimento do dependente
+                        <br>Grau de parentesco
+                        <br>O dependente mora com você?
+                    </p>
+                    <div class="textarea_dependents">
+                        <textarea class="form-control " placeholder="Descreva aqui" name="textarea_dependents" id="textarea_dependents">{{ old('textarea_dependents') }}</textarea>
                     </div>
 
                 </div>
@@ -339,19 +318,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
 
-                    <div class="col-12">
-                        <label for="name_fed" class="form-label">Nome do alimentando</label>
-                        <input type="text" class="form-control" name="name_fed" id="name_fed" placeholder="Ex: José Silva" value="{{ old('name_fed') }}">
-                    </div>
-
-                    <div class="col-12">
-                        <label for="cpf_fed" class="form-label">CPF do alimentando</label>
-                        <input type="text" class="form-control" name="cpf_fed" id="cpf_fed" placeholder="123.456.789-10" value="{{ old('cpf_fed') }}">
-                    </div>
-
-                    <div class="col-12 mt-3">
-                        <label for="birth_fed" class="form-label">Data de nascimento do alimentando</label>
-                        <input type="date" class="form-control" name="birth_fed" id="birth_fed" placeholder="Ex: 10/01/1990" value="{{ old('birth_fed') }}">
+                    <p> Descreva os seguintes dados:
+                        <br>Nome do alimentando
+                        <br>CPF do alimentando
+                        <br>Data de nascimento do alimentando
+                    </p>
+                    <div class="textarea_fed">
+                        <textarea class="form-control " placeholder="Descreva aqui" name="textarea_fed" id="textarea_fed">{{ old('textarea_fed') }}</textarea>
                     </div>
 
                 </div>

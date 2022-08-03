@@ -40,15 +40,9 @@ return new class extends Migration
             $table->string('have_spouse');
             $table->string('cpf_spouse')->nullable();
             $table->string('have_dependents');
-            $table->string('name_dependents')->nullable();
-            $table->string('cpf_dependents')->nullable();
-            $table->date('birth_dependents')->nullable();
-            $table->string('kinship_dependents')->nullable();
-            $table->string('live_with_dependents')->nullable();
+            $table->text('textarea_dependents')->nullable();
             $table->string('have_fed');
-            $table->string('name_fed')->nullable();
-            $table->string('cpf_fed')->nullable();
-            $table->date('birth_fed')->nullable();
+            $table->text('textarea_fed')->nullable();
             $table->string('have_medical_expenses');
             $table->text('textarea_medical_expenses')->nullable();
             $table->string('have_education_expenses');

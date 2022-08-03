@@ -78,18 +78,6 @@
                         </td>
                     </tr>
 
-                    @foreach($form as $thisForm)
-
-
-                    <p>Nome: {{$thisForm->name}}</p>
-                    <p>Mudou de endereço?: {{$thisForm->"change-address"}}</p>
-
-
-
-                    @endforeach
-
-
-
 
 
 
