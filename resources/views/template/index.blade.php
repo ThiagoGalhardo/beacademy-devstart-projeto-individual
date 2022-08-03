@@ -45,14 +45,13 @@
                     <li class="menu-item"><a href="/about">Sobre mim</a></li>
                     <li class="menu-item"><a href="/services">Serviços</a></li>
                     <li class="menu-item"><a href="/contact">Contato</a></li>
-                    <!-- <li class="menu-item"><a href="/products" class="menu-item">Declaração de IR
+                    <li class="menu-item"><a href="/products" class="menu-item">Declaração de IR
                             @php
                             echo date('Y');
-                            @endphp</a></li> -->
+                            @endphp</a></li>
 
 
-
-                    <li>
+                    <!-- <li>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 DECLARAÇÃO DE IR
@@ -64,39 +63,52 @@
                                 <li><a class="dropdown-item" href="/products">Fazer Declaração</a></li>
                                 <li><a class="dropdown-item" href="/login">Acompanhar pedido</a></li>
                             </ul>
-                            @if(Auth::user())
+                    </li> -->
+
+                    @if(Auth::user())
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                @php
+                                $firstName = explode(" ", Auth::user()->name)
+                                @endphp
+
+                                {{ $firstName[0] }}
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="/account/{{Auth::user()->id}}">Minha conta</a></li>
+                                <li><a class="dropdown-item" href="/account/{{Auth::user()->id}}/orders">Pedidos</a></li>
+                                <li>
+                                    <form class="ms-3" method="POST" action="{{ route('logout') }}">
+                                        @csrf
+
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        this.closest('form').submit();">Sair</a>
+
+                                    </form>
+                                </li>
+                            </ul>
+                    </li>
+
+                    @endif
+                    @if(Auth::user() && Auth::user()->is_admin == 1)
                     <li class="nav-item">
-                        <a href="/account/{{ Auth::user()->id }}">{{ Auth::user()->name }}</a>
+                        <a id="txtPanel" class="nav-link text-dark" href="{{ route('admin.panel') }}">Painel de controle</a>
                     </li>
 
 
-                    @if(Auth::user()->is_admin == 1)
+                    @endif
+                    @if(!Auth::user())
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ route('page.index') }}">Dashboard</a>
+                        <a id="txtLogin" href="{{ route('login') }}">Entrar</a>
                     </li>
                     @endif
-                    <li class="nav-item">
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
 
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                this.closest('form').submit();">
-                                Sair
-                            </a>
 
-                        </form>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a href="{{ route('login') }}">Entrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('register') }}">Registrar-se</a>
-                    </li>
-                    @endif
+
+
+                </ul>
         </div>
-        </li>
-        </ul>
         </nav>
     </header>
 

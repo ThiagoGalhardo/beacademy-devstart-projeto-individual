@@ -25,28 +25,34 @@
 <div class="container-main pt-5">
 
     <div class="container mt-5">
-        <h1 class="text-center">Lista de usuários</h1>
+        <h1 class="text-center">Lista de pedidos</h1>
         <hr>
         <table class="table table-hover table-danger table-striped">
             <thead class="text-center">
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">e-mail</th>
-                    <th scope="col">Data de Cadastro</th>
+                    <th scope="col">Id do usuário</th>
+                    <th scope="col">Nome do usuário</th>
+                    <th scope="col">Serviço</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Data do pedido</th>
                     <th scope="col">Última atualização</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody class="text-center">
-                @foreach($users as $user)
+                @foreach($orders as $order)
                 <tr>
-                    <th scope="row">{{ $user->id }}</th>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ date('d/m/Y - H:i:s', strtotime($user->created_at)) }}</td>
-                    <td>{{ date('d/m/Y - H:i:s', strtotime($user->updated_at)) }}</td>
-                    <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-primary text-dark">Visualizar</a></td>
+                    <th scope="row">{{ $order->id }}</th>
+                    <td>{{ $order->user_id }}</td>
+                    <td>{{ $user[0]->name }}</td>
+                    <td>{{ $order->service_name }}</td>
+                    <td>{{ $order->price }}</td>
+                    <td>{{ $order->status }}</td>
+                    <td>{{ $order->created_at }}</td>
+                    <td>{{ $order->update_at }}</td>
+                    <td><a href="" class="btn btn-primary text-dark">Visualizar</a></td>
                 </tr>
                 @endforeach
             </tbody>

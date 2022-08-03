@@ -19,13 +19,31 @@ class OrderController extends Controller
         $this->order = $order;
     }
 
+    public function showAllOrders()
+    {
+        $orders = $this->order->all();
+
+        return view('orders.list-all', compact('orders'));
+    }
+
+    public function showOrdersUserAdmin($userId)
+    {
+        if (Auth::user()->id != $userId && Auth::user()->is_admin == 0)
+            return redirect()->route('page.index');
+
+        $user = $this->user->where("id", $userId)->get();
+        $orders = $this->order->where("user_id", $userId)->get();
+
+        return view('orders.show', compact('user', 'orders'));
+    }
+
     public function showOrders($userId)
 
     {
         if (!$user = $this->user->find($userId))
             return redirect()->route('users.index');
 
-        if (Auth::user()->id != $userId)
+        if (Auth::user()->id != $userId && Auth::user()->is_admin == 0)
             return redirect()->route('page.index');
 
         $orders = $this->order->where("user_id", $userId)->get();

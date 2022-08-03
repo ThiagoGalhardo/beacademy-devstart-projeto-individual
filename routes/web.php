@@ -38,6 +38,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/file', [FileController::class, 'store']);
 
     Route::post('/orders', [OrderController::class, 'storeOrder'])->name('users.saveOrder');
+    Route::get('admin/orders', [OrderController::class, 'showAllOrders'])->name('orders.listAll');
+    Route::get('admin/orders/{id}', [OrderController::class, 'showOrdersUserAdmin'])->name('orders.listOrderUserforAdmin');
 
     Route::get('/account/{id}', [UserController::class, 'account'])->name('users.account');
     Route::get('/account/{id}/orders', [OrderController::class, 'showOrders'])->name('users.orders');
@@ -45,9 +47,11 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['admin'])->group(function () {
-    Route::get('/users', [UserController::class, 'index'])->name('users.list');
-    Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
-    Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
-    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
-    Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::get('/admin/users', [UserController::class, 'index'])->name('users.list');
+    Route::get('/admin/users/{id}', [UserController::class, 'show'])->name('users.show');
+    Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('users.update');
+    Route::get('/admin/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+
+    Route::get('/admin/panel', [UserController::class, 'panel'])->name('admin.panel');
 });

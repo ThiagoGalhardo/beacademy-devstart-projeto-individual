@@ -55,8 +55,14 @@ class FormController extends Controller
         $file->filenames = $files;
         $file->form_id = $this->form->create($data)->id;
 
+        $request->session()->put('form_id', $file->form_id);
+
+
         $file->save();
 
-        return redirect()->route('page.index');
+        $id = $userId;
+
+
+        return redirect()->route('users.checkout', $id);
     }
 }

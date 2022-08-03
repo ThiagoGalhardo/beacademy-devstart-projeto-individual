@@ -19,7 +19,6 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
 
-    //  $id = {{ Auth::user()->id }};
     public const HOME = '/';
     public const PRODUCTS = '/products';
 

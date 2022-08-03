@@ -195,3 +195,11 @@ header .container nav .menu li a {
 .btn-secondary:focus {
     box-shadow: 0 0 0 .2rem rgba(120, 82, 89, 0.5) !important;
 }
+
+#txtLogin {
+    font-size: 12px;
+}
+
+#txtPanel {
+    font-size: 14px;
+}

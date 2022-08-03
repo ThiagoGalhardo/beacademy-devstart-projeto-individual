@@ -84,7 +84,7 @@
                 <div class="row g-3 mt-0">
                     <div class="col-sm-12 col-md-3 col-lg-3">
                         <label for="zipcode" class="form-label">Cep</label>
-                        <input type="text" class="form-control @error('doc-voter') is-invalid @enderror" name="zipcode" id="zipcode" placeholder="Ex: 17560246" onkeypress="$(this).mask('00000000')" value="{{ old('zipcode') }}">
+                        <input type="text" class="form-control @error('zipcode') is-invalid @enderror" name="zipcode" id="zipcode" placeholder="Ex: 17560246" onkeypress="$(this).mask('00000000')" value="{{ old('zipcode') }}">
                         @error('zipcode')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -590,6 +590,8 @@
         </div>
 
         <div class="text-center">
+            <!-- <a href="" class="btn btn-primary mt-5 mb-5 px-5 py-2 btn-lg" type="submit">Finalizar
+                Formulário</a> -->
             <button class="btn btn-primary mt-5 mb-5 px-5 py-2 btn-lg" type="submit">Finalizar
                 Formulário</button>
 
