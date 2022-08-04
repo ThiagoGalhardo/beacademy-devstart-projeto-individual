@@ -3,7 +3,6 @@
 @section('content')
 
 
-
 <div class="mt-5 pt-5">
     <div class="container pt-5">
 
@@ -73,12 +72,8 @@
                                 <button type="submit" class="btn btn-success ">Atualizar</button>
                             </div>
 
-
-                            <!-- <a href="" class="btn btn-primary text-dark">Salvar edição</a> -->
                         </td>
                     </tr>
-
-
 
                     @endforeach
                 </form>
@@ -86,9 +81,19 @@
         </table>
         <div class="row mb-5">
             <div class="col-12">
-                @if($thisOrder->form_id)
-                <a href="{{ route('form.pdf', $thisOrder->form_id)}}" class="btn btn-outline-success text-dark">Download Formulário</a>
+                @if($thisOrder->form_id != null)
+                <p>Formulário</p>
+                <a href="{{ route('form.pdf', $thisOrder->form_id)}}" class="btn btn-outline-success text-dark mb-3">Baixar Formulário</a>
                 @endif
+
+                <p>Documentos</p>
+
+                @foreach($names as $path)
+                <a href="{{ route('file.download', $path)}}" class="btn btn-outline-success text-dark">Documento {{$path}}</a>
+                @endforeach
+
+
+
             </div>
         </div>
         <hr>

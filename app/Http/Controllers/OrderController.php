@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\File;
 use App\Models\Form;
 use App\Models\Order;
 use App\Models\User;
@@ -37,16 +38,25 @@ class OrderController extends Controller
         $order = $this->order->where("id", $orderId)->get();
 
 
-        // dd($order);
-
         foreach ($order as $item) {
         }
 
         if ($item->form_id) {
             $form_id = $item->form_id;
             $form = Form::all()->where("id", $form_id);
+            $file = File::all()->where("form_id", $form_id);
 
-            return view('orders.show', compact('order', 'form'));
+            foreach ($file as $hasFile) {
+                $filenames = explode(",", $hasFile->filenames);
+            }
+
+            $names = [];
+            foreach ($filenames as $filename) {
+                $formatted_filename = str_replace(array('"', '[', ']'), '', $filename);
+                $names[] = $formatted_filename;
+            }
+
+            return view('orders.show', compact('order', 'form', 'names'));
         }
 
 

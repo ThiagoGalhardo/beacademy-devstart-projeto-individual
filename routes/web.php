@@ -35,10 +35,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/form', [FormController::class, 'store'])->name('form.store');
 
     Route::get('/pdf/{id}', [FormController::class, 'generatePdf'])->name('form.pdf');
+    Route::get('/download/{file}', [FormController::class, 'downloadFile'])->name('file.download');
 
     Route::get('/choose', [PageController::class, 'choose'])->name('page.choose');
     Route::get('/file', [FileController::class, 'create']);
-    Route::post('/file', [FileController::class, 'store']);
 
     Route::post('/orders', [OrderController::class, 'storeOrder'])->name('users.saveOrder');
     Route::get('admin/orders', [OrderController::class, 'showAllOrders'])->name('orders.listAll');

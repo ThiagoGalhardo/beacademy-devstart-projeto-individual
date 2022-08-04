@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Form;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -105,17 +104,4 @@ class UserController extends Controller
 
         return view('admin.control-panel', compact('users'));
     }
-
-    // public function orders($id)
-    // {
-    //     if (!$user = $this->model->find($id)) {
-    //         return redirect()->route('page.index');
-    //     }
-
-
-    //     if (Auth::user()->id != $id)
-    //         return redirect()->route('page.index');
-
-    //     return view('users.orders', compact('user'));
-    // }
 }

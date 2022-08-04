@@ -6,7 +6,6 @@ use App\Http\Requests\StoreUpdateFormRequest;
 use App\Models\File;
 use App\Models\Form;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -40,8 +39,6 @@ class FormController extends Controller
         $data['have_patrimony'] = $request->havePatrimony;
         $data['have_education_expenses'] = $request->haveEducationExpenses;
 
-        // dd($data);
-
         $userId = Auth::user()->id;
 
         $files = [];
@@ -49,21 +46,22 @@ class FormController extends Controller
             foreach ($request->file('filenames') as $file) {
                 $name = time() . rand(1, 100) . '.' . $file->extension();
                 $files[] = $name;
-                $file->storeAs('files/' . $userId, $name);
+                $file->storeAs('files/', $name);
             }
         }
+
+        $this->validate($request, [
+            'filenames' => 'required',
+            'filenames.*' => 'required'
+        ]);
 
         $file = new File();
         $file->filenames = $files;
         $file->form_id = $this->form->create($data)->id;
 
         $request->session()->put('form_id', $file->form_id);
-
-
         $file->save();
-
         $id = $userId;
-
 
         return redirect()->route('users.checkout', $id);
     }
@@ -75,5 +73,12 @@ class FormController extends Controller
         $form = Form::all()->where("id", $form_id);
 
         return Pdf::loadView('form.pdf', compact('form'))->download('form' . $form_id . '.pdf');
+    }
+
+    public function downloadFile($file)
+    {
+        $path = storage_path() . '/' . 'app' . '/files/' . $file;
+
+        return response()->download($path);
     }
 }

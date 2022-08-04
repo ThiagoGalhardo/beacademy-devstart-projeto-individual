@@ -14,7 +14,6 @@ class StoreUpdateFormRequest extends FormRequest
 
     public function rules()
     {
-        // $id = $this->id ?? '';
         $rules = [
             'name' => [
                 'required',
@@ -202,20 +201,7 @@ class StoreUpdateFormRequest extends FormRequest
                 'max:3'
             ],
 
-
-            // 'image' => [
-            //     'file',
-            //     'mimes:jpg,jpeg,png,webp'
-            // ]
         ];
-
-        // if ($this->method() == 'PUT') {
-        //     $rules['password'] = [
-        //         'nullable',
-        //         'min:6',
-        //         'max:15'
-        //     ];
-        // }
 
         return $rules;
     }
