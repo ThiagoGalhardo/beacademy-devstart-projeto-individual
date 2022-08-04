@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -27,7 +28,6 @@ class UserTest extends TestCase
 
     public function test_check_if_user_can_see_form_page()
     {
-        // $user = User::factory()->create();
         $user =  User::create([
             'name' => 'Test Example',
             'email' => 'test' . uniqid() . '@example.com',
@@ -43,7 +43,6 @@ class UserTest extends TestCase
 
     public function test_check_if_user_can_see_users_list()
     {
-        // $user = User::factory()->create();
         $user =  User::create([
             'name' => 'Test Example',
             'email' => 'test' . uniqid() . '@example.com',
@@ -51,13 +50,12 @@ class UserTest extends TestCase
         ]);
 
         $this->actingAs($user);
-        $response = $this->get('/users');
+        $response = $this->get('/admin/users');
         $response->assertStatus(302);
     }
 
     public function test_check_if_user_can_see_edit_user()
     {
-        // $user = User::factory()->create();
         $user =  User::create([
             'name' => 'Test Example',
             'email' => 'test' . uniqid() . '@example.com',
@@ -66,13 +64,12 @@ class UserTest extends TestCase
 
         $this->actingAs($user);
         $id = User::all()->random()->id;
-        $response = $this->get("/users/{$id}/edit");
+        $response = $this->get("/admin/users/{$id}/edit");
         $response->assertStatus(302);
     }
 
     public function test_check_if_user_can_delete_user()
     {
-        // $user = User::factory()->create();
         $user =  User::create([
             'name' => 'Test Example',
             'email' => 'test' . uniqid() . '@example.com',
@@ -82,7 +79,34 @@ class UserTest extends TestCase
         $this->actingAs($user);
         $id = User::all()->random()->id;
         $response = $this->actingAs($user)
-            ->delete("/users/$id");
+            ->delete("/admin/users/$id");
+        $response->assertStatus(302);
+    }
+
+    public function test_check_if_user_can_see_orders_list()
+    {
+        $user =  User::create([
+            'name' => 'Test Example',
+            'email' => 'test' . uniqid() . '@example.com',
+            'password' => '12345678',
+        ]);
+
+        $this->actingAs($user);
+        $response = $this->get('admin/orders');
+        $response->assertStatus(302);
+    }
+
+    public function test_check_if_user_can_see_edit_orders()
+    {
+        $user =  User::create([
+            'name' => 'Test Example',
+            'email' => 'test' . uniqid() . '@example.com',
+            'password' => '12345678',
+        ]);
+
+        $this->actingAs($user);
+        $order_id = Order::all()->random()->id;
+        $response = $this->get("/admin/orders/{$order_id}");
         $response->assertStatus(302);
     }
 }
