@@ -80,17 +80,22 @@
 
 
 
-
-
-
-
-
                     @endforeach
                 </form>
             </tbody>
         </table>
+        <div class="row mb-5">
+            <div class="col-12">
+                @if($thisOrder->form_id)
+                <a href="{{ route('form.pdf', $thisOrder->form_id)}}" class="btn btn-outline-success text-dark">Download Formulário</a>
+                @endif
+            </div>
+        </div>
+        <hr>
+
         <a href="{{ route('users.show', $thisOrder->user_id)}}" class="btn btn-primary text-dark">Voltar</a>
     </div>
+
 
 </div>
 

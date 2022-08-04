@@ -8,6 +8,7 @@ use App\Models\Form;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class FormController extends Controller
 {
@@ -65,5 +66,14 @@ class FormController extends Controller
 
 
         return redirect()->route('users.checkout', $id);
+    }
+
+
+
+    public function generatePdf($form_id)
+    {
+        $form = Form::all()->where("id", $form_id);
+
+        return Pdf::loadView('form.pdf', compact('form'))->download('form' . $form_id . '.pdf');
     }
 }

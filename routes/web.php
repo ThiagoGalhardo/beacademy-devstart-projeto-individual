@@ -33,6 +33,9 @@ Route::get('/products', [PageController::class, 'products'])->name('page.product
 Route::middleware(['auth'])->group(function () {
     Route::get('/form', [FormController::class, 'form'])->name('form');
     Route::post('/form', [FormController::class, 'store'])->name('form.store');
+
+    Route::get('/pdf/{id}', [FormController::class, 'generatePdf'])->name('form.pdf');
+
     Route::get('/choose', [PageController::class, 'choose'])->name('page.choose');
     Route::get('/file', [FileController::class, 'create']);
     Route::post('/file', [FileController::class, 'store']);
