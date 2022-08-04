@@ -96,12 +96,4 @@ class UserController extends Controller
 
         return view('users.account', compact('user'));
     }
-
-
-    public function panel()
-    {
-        $users = User::all();
-
-        return view('admin.control-panel', compact('users'));
-    }
 }

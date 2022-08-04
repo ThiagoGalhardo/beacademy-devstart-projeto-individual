@@ -93,7 +93,7 @@
                     @endif
                     @if(Auth::user() && Auth::user()->is_admin == 1)
                     <li class="nav-item">
-                        <a id="txtPanel" class="nav-link text-dark" href="{{ route('admin.panel') }}">Painel de controle</a>
+                        <a id="txtPanel" class="nav-link text-dark" href="{{ route('users.list') }}">Painel de controle</a>
                     </li>
 
 
