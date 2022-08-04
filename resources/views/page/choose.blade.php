@@ -35,7 +35,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Conversar pelo WhatsApp</h5>
                             <p class="card-text text-start px-2">Uma alternativa caso não queira preencher o formulário online</p>
-                            <a href="https://api.whatsapp.com/send?phone=5511980942207&text=Ol%C3%A1%2C%20gostaria%20de%20seguir%20o%20atendimento%20por%20aqui!" class="btn btn-primary" target="_blank">Conversar Agora</a>
+                            <a href="{{ route('users.checkout', Auth::user()->id) }}" class="btn btn-primary">Conversar Agora</a>
                         </div>
                     </div>
                 </div>
@@ -44,11 +44,6 @@
         </div>
 
     </div>
-
-
-
-
-
 
 
 </main>

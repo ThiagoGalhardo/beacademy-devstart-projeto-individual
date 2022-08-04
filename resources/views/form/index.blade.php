@@ -546,27 +546,12 @@
                     </div>
                 </div>
 
-
-
-
-
-
-                <!-- <div class="mb-3">
-                <label for="file-upload" class="form-label">Envio de documentos</label>
-                <input class="form-control" name="files-upload[]" type="file" enctype="multipart/form-data" id="files" multiple>
-
-
-
-            </div> -->
-
             </div>
 
             <!-- ============ End card Envio de documentos ============ -->
         </div>
 
         <div class="text-center">
-            <!-- <a href="" class="btn btn-primary mt-5 mb-5 px-5 py-2 btn-lg" type="submit">Finalizar
-                Formulário</a> -->
             <button class="btn btn-primary mt-5 mb-5 px-5 py-2 btn-lg" type="submit">Finalizar
                 Formulário</button>
 
@@ -579,7 +564,7 @@
 
 @endsection
 
-<!-- Turn all file input elements into ponds -->
+
 
 <style>
     .btn-primary {

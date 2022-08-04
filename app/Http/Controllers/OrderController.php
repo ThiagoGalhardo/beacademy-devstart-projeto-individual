@@ -103,6 +103,8 @@ class OrderController extends Controller
         $order = new Order();
         $order->create($data);
 
+        Session::forget('form_id');
+
         return redirect()->route('users.orders', $userId)->with('success', 'Pedido realizado!');
     }
 

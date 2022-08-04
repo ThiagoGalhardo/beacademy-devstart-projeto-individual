@@ -4,26 +4,19 @@
 
 
 
-<div class="mt-5 pt-5">
-    <div class="container pt-5">
-
-        <h3>Olá, {{ Auth::user()->name }} </h3>
-
-        <hr>
-
+<div class="mt-5 pt-3">
+    <div class="container">
         <div class="container mt-5 d-flex justify-content-center">
             <a class="btn btn-primary me-3 px-4" href="{{route('users.list')}}">Listar usuários</a>
             <a class="btn btn-primary me-3 px-4" href="/admin/orders">Listar pedidos</a>
         </div>
-
-
     </div>
 </div>
 
 
 <div class="container-main ">
 
-    <div class="container mt-5">
+    <div class="container mt-3">
         <h1 class="text-center">Lista de pedidos</h1>
         <hr>
         <div class="col mb-3">
@@ -55,7 +48,7 @@
                     <td>{{ $order->status }}</td>
                     <td>{{ $order->created_at }}</td>
                     <td>{{ $order->updated_at }}</td>
-                    <td><a href="{{route('orders.listOrderUserforAdmin', $order->user_id )}}" class="btn btn-primary text-dark">Visualizar</a></td>
+                    <td><a href="{{route('orders.listOrderUserforAdmin', $order->id )}}" class="btn btn-primary text-dark">Visualizar</a></td>
                 </tr>
                 @endforeach
             </tbody>

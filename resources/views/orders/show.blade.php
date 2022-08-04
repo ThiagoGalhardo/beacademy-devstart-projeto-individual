@@ -3,26 +3,19 @@
 @section('content')
 
 
-<div class="mt-5 pt-5">
-    <div class="container pt-5">
-
-        <h3>Olá, {{ Auth::user()->name }} </h3>
-
-        <hr>
-
+<div class="mt-5 pt-3">
+    <div class="container">
         <div class="container mt-5 d-flex justify-content-center">
             <a class="btn btn-primary me-3 px-4" href="{{route('users.list')}}">Listar usuários</a>
             <a class="btn btn-primary me-3 px-4" href="/admin/orders">Listar pedidos</a>
         </div>
-
-
     </div>
 </div>
 
 
-<div class="container-main pt-5">
+<div class="container-main ">
 
-    <div class="container mt-5">
+    <div class="container mt-3">
         <h1 class="text-center">Lista de pedidos</h1>
         <hr>
 
@@ -81,10 +74,10 @@
         </table>
         <div class="row mb-5">
             <div class="col-12">
-                @if($thisOrder->form_id != null)
+                @if($thisOrder->form_id)
                 <p>Formulário</p>
                 <a href="{{ route('form.pdf', $thisOrder->form_id)}}" class="btn btn-outline-success text-dark mb-3">Baixar Formulário</a>
-                @endif
+
 
                 <p>Documentos</p>
 
@@ -92,7 +85,7 @@
                 <a href="{{ route('file.download', $path)}}" class="btn btn-outline-success text-dark">Documento {{$path}}</a>
                 @endforeach
 
-
+                @endif
 
             </div>
         </div>

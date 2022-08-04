@@ -4,7 +4,7 @@
 
 
 
-<div class="mt-5 pt-5">
+<div class="container-main mt-5 pt-5">
     <div class="container p-5">
 
         <h3>Olá, {{ Auth::user()->name }} </h3>

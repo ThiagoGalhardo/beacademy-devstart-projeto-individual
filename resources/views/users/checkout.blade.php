@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="container-main mt-5 pt-5">
+<div class="container mt-5 pt-5">
     <div class="container p-5">
 
         <h3>Resumo do pedido</h3>
