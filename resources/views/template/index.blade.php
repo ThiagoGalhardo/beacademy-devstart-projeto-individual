@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ========= FAVICON ========= -->
+
+    <link rel="icon" type="image/x-icon" href="{{ url('img/favicon.ico') }}">
+
     <!-- ========= GOOGLE FONTS ========= -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
