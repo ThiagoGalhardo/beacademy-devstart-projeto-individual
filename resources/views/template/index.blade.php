@@ -55,20 +55,6 @@
                             @endphp</a></li>
 
 
-                    <!-- <li>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                DECLARAÇÃO DE IR
-                                @php
-                                echo date('Y');
-                                @endphp
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="/products">Fazer Declaração</a></li>
-                                <li><a class="dropdown-item" href="/login">Acompanhar pedido</a></li>
-                            </ul>
-                    </li> -->
-
                     @if(Auth::user())
                     <li>
                         <div class="dropdown">
@@ -99,8 +85,6 @@
                     <li class="nav-item">
                         <a id="txtPanel" class="nav-link text-dark" href="{{ route('users.list') }}">Painel de controle</a>
                     </li>
-
-
                     @endif
                     @if(!Auth::user())
                     <li class="nav-item">
