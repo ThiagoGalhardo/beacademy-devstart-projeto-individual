@@ -1,64 +1,126 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+   <img src="https://www.beacademy.com.br/wp-content/uploads/2019/11/Logo-Topo.png" /> 
 </p>
 
-## About Laravel
+<h1 align="center">Projeto individual Be Academy - Paylivre</h1>
+<p align="center">
+ <a href="#o-desafio">Desafio</a> •
+    <a href="#screenshot">Screenshot</a> •
+ <a href="#tecnologias">Tecnologias</a> •
+ <a href="#pré-requisitos">Pré Requisitos</a> •
+ <a href="#clonar-o-repositório">Clonar repositório</a> •
+ <a href="#migração-de-tabelas-do-banco-de-dados">Migração de tabelas do banco de dados</a> •
+ <a href="#iniciando-projeto">Iniciando projeto</a> •
+ <a href="#autor">Autor</a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<br>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### O Desafio
 
-## Learning Laravel
+Criar um CRUD em PHP, utilizando Laravel
+<br>O sistema deverá possuir autenticação
+<br>Utilizar o banco de dados Mysql para criar uma tabela - de sua preferência, com 10 atributos
+<br>O CRUD deve conter os métodos de Insert, Update, Delete e Read dessa tabela
+<br>As ações deverão ser realizadas através de uma página web, portanto o sistema deverá conter um frontend que se comunique com o backend
+<br>A solução deve ter pelo menos 30% de testes unitários
+<br>O projeto deverá ser armazenado no repositório do github
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Screenshot
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<h1 align="center">
+<img alt="demo" title="Screenshot" src="screenshot.gif" height="450" />
+</h1>
 
-## Laravel Sponsors
+### Tecnologias:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-   ✔️ PHP
+-   ✔️ Laravel 9
+-   ✔️ Bootstrap
+-   ✔️ MariaDB
 
-### Premium Partners
+### Pré Requisitos
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+-   Antes de iniciar o projeto, você vai precisar das seguintes ferramentas:
 
-## Contributing
+    -   ✔️ [PHP](https://www.php.net/manual/pt_BR/install.php)
+    -   ✔️ [Composer](https://getcomposer.org/download/)
+    -   ✔️ [Git](https://git-scm.com/)
+    -   ✔️ [MariaDB](https://mariadb.org/download/)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Clonar o repositório
 
-## Code of Conduct
+```
+git clone https://github.com/ThiagoGalhardo/beacademy-devstart-projeto-individual.git
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Depois de clonado, vamos acessar o projeto
 
-## Security Vulnerabilities
+```
+cd beacademy-devstart-projeto-individual
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Instalando Dependências
 
-## License
+```
+composer update
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Configurar arquivo .env
+Vá até o arquivo .env.exemple e renomeie para .env
+Insira usas credenciais de acesso ao banco de dados
+Por exemplo:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_laravel
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+```
+
+Agora precisamos gerar uma chave da aplicação que fica no campo APP_KEY.
+
+```
+php artisan key:generate
+```
+
+### Migração de tabelas do banco de dados
+
+Após esses passo vamos agora criar nossas tabelas do nosso banco de dados para acessar os dados das jogadas que iremos guardar nele.
+
+```
+php artisan migrate
+```
+
+E vamos popular as tabelas com dados ficticios (opcional)
+
+```
+php artisan db:seed
+```
+
+### Iniciando projeto
+
+Iniciar projeto
+
+```
+php artisan serve
+```
+
+Para acessar a aplicação abra o navegador e digite o endereço
+
+```
+localhost:8000
+```
+
+### Autor
+
+<img alt="Thiago Galhardo" title="Thiago Galhardo" src="https://avatars.githubusercontent.com/u/70352885?v=4" height="100" width="100" />
+
+Feito com 💜 por Thiago Galhardo 👋
+
+[![LinkedIn Badge](https://img.shields.io/badge/-Thiago_Galhardo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/thgalhardo/)](https://www.linkedin.com/in/thgalhardo/)
+[![GitHub Badge](https://img.shields.io/badge/-Thiago_Galhardo-gray?style=flat-square&logo=GitHub&logoColor=white&link=https://github.com/ThiagoGalhardo/)](https://github.com/thiagogalhardo/)
